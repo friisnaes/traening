@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STANDARD · Krop & Kognition</title>
+<meta name="description" content="Privat træningsfællesskab for mænd 55–60 år. Krop. Hjerne. Standard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#FAF7F2;--bg-warm:#F5F0E8;--bg-card:#FFFFFF;--bg-block:#F8F5EF;--bg-hero:#F0EDE5;
+--accent:#9B7D50;--accent-dim:rgba(155,125,80,.08);--accent-mid:rgba(155,125,80,.18);--accent-bright:#B8944F;--accent-dark:#7A6340;
+--text:#2C2825;--text-body:#3D3835;--text-muted:#8A827A;--text-dim:#B0A89E;
+--border:#E8E4DD;--border-light:#F0ECE5;
+--mob:#5B8F7B;--mob-bg:rgba(91,143,123,.07);--mob-border:rgba(91,143,123,.2);
+--str:#9B7D50;--str-bg:rgba(155,125,80,.07);--str-border:rgba(155,125,80,.2);
+--puls:#B07060;--puls-bg:rgba(176,112,96,.07);--puls-border:rgba(176,112,96,.2);
+--cog:#6B7FA0;--cog-bg:rgba(107,127,160,.07);--cog-border:rgba(107,127,160,.2);--cog-dark:#4E6180;
+--green:#5B8F6A;--green-bg:rgba(91,143,106,.08);
+--shadow-sm:0 1px 3px rgba(44,40,37,.04);--shadow-md:0 4px 12px rgba(44,40,37,.06);--shadow-lg:0 8px 30px rgba(44,40,37,.08);
+--font-display:'Cormorant Garamond',Georgia,serif;--font-body:'DM Sans','Helvetica Neue',sans-serif;
+--ease:cubic-bezier(.25,.46,.45,.94);--ease-out:cubic-bezier(.22,1,.36,1);--radius:4px;--radius-lg:8px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text-body);line-height:1.7;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none;transition:color .3s}a:hover{color:var(--accent-dark)}
+button{font-family:var(--font-body);cursor:pointer;border:none;background:none;color:var(--text)}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:500;line-height:1.2;color:var(--text)}
+h1{font-size:clamp(2.2rem,5vw,3.6rem)}h2{font-size:clamp(1.7rem,3.5vw,2.6rem)}h3{font-size:clamp(1.2rem,2.5vw,1.7rem)}h4{font-size:1.1rem}
+em,i{font-style:italic;color:var(--accent-dark)}
+.container{max-width:1080px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)}
+section{padding:clamp(2.5rem,6vw,4.5rem) 0}
+.section-label{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;font-weight:600}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,247,242,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+nav .nav-inner{max-width:1080px;margin:0 auto;padding:.7rem clamp(1.2rem,4vw,3rem);display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--font-display);font-size:1.25rem;font-weight:600;color:var(--text);cursor:pointer}.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:1.3rem;align-items:center}
+.nav-links a{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);font-weight:500;cursor:pointer;transition:color .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--accent-dark)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;padding:8px}.nav-toggle span{width:20px;height:1.5px;background:var(--text)}
+@media(max-width:768px){.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(250,247,242,.97);border-bottom:1px solid var(--border);flex-direction:column;padding:1rem 2rem;gap:.7rem}.nav-links.open{display:flex}.nav-toggle{display:flex}}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.4rem;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;border-radius:var(--radius);transition:all .25s var(--ease)}
+.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent-dark)}
+.btn-cog{background:var(--cog);color:#fff}.btn-cog:hover{background:var(--cog-dark)}
+.btn-outline{border:1.5px solid var(--accent);color:var(--accent)}.btn-outline:hover{background:var(--accent-dim)}
+.btn-ghost{color:var(--text-muted);border:1px solid var(--border)}.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-sm{padding:.35rem .8rem;font-size:.7rem}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.4rem;transition:all .3s;box-shadow:var(--shadow-sm)}
+.card:hover{border-color:var(--accent);box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.card-number{font-family:var(--font-display);font-size:2.4rem;color:var(--border);font-weight:300;line-height:1;margin-bottom:.3rem}
+.card-title{font-family:var(--font-display);font-size:1.15rem;margin-bottom:.3rem;color:var(--text)}
+.card-text{font-size:.84rem;color:var(--text-muted);line-height:1.65}
+.card-tag{display:inline-block;padding:.18rem .55rem;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;border-radius:3px;margin-bottom:.4rem;font-weight:600}
+.tag-mob{color:var(--mob);background:var(--mob-bg);border:1px solid var(--mob-border)}
+.tag-str{color:var(--str);background:var(--str-bg);border:1px solid var(--str-border)}
+.tag-puls{color:var(--puls);background:var(--puls-bg);border:1px solid var(--puls-border)}
+.tag-cog{color:var(--cog);background:var(--cog-bg);border:1px solid var(--cog-border)}
+.filter-row{display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:1rem}
+.filter-btn{padding:.35rem .8rem;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--border);border-radius:var(--radius);color:var(--text-muted);transition:all .2s;cursor:pointer;background:var(--bg-card);font-weight:500}
+.filter-btn:hover{border-color:var(--text-muted);color:var(--text)}
+.filter-btn.active{border-color:var(--accent);color:var(--accent);background:var(--accent-dim);font-weight:600}
+.version-tabs{display:flex;margin-bottom:1.5rem;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm)}
+.version-tab{flex:1;padding:.55rem .6rem;text-align:center;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);cursor:pointer;transition:all .2s;border-right:1px solid var(--border);background:var(--bg-card);font-weight:500}
+.version-tab:last-child{border-right:none}.version-tab:hover{color:var(--text)}.version-tab.active{background:var(--accent);color:#fff;font-weight:600}
+.block{margin-bottom:1.3rem;padding:1.1rem 1.3rem;background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius) var(--radius-lg) var(--radius-lg) var(--radius);box-shadow:var(--shadow-sm)}
+.block.block-warmup{border-left-color:var(--mob)}.block.block-cool{border-left-color:#7A9EB0}
+.block h4{margin-bottom:.4rem;display:flex;justify-content:space-between;align-items:baseline;font-size:1rem}
+.block h4 span{font-weight:400;font-size:.8rem;color:var(--text-muted);font-family:var(--font-body)}
+.ex{padding:.5rem 0;border-bottom:1px solid var(--border-light);font-size:.86rem}.ex:last-child{border-bottom:none}
+.ex-top{display:flex;justify-content:space-between;align-items:center;gap:.4rem}
+.ex-name{font-weight:600;color:var(--text)}
+.ex-video{display:inline-flex;align-items:center;gap:.2rem;padding:.15rem .45rem;font-size:.6rem;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);border-radius:3px;font-weight:600;text-decoration:none;transition:all .2s;flex-shrink:0}
+.ex-video:hover{background:var(--accent);color:#fff}
+.ex-detail{color:var(--text-muted);margin-top:.1rem;font-size:.8rem}
+.ex-cue{font-size:.85rem;color:var(--accent-dark);margin-top:.1rem;font-style:italic;font-family:var(--font-display)}
+.ex-versions{font-size:.7rem;color:var(--text-dim);margin-top:.15rem;display:flex;gap:.8rem}
+.check-done{display:inline-flex;align-items:center;gap:.3rem;padding:.35rem .8rem;border:1.5px solid var(--green);color:var(--green);border-radius:var(--radius);font-size:.72rem;text-transform:uppercase;cursor:pointer;font-weight:600}
+.check-done.checked{background:var(--green-bg)}
+.detail-meta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.6rem}
+.detail-meta-item{font-size:.74rem;color:var(--text-muted);font-weight:500}
+.detail-tags{display:flex;gap:.25rem;flex-wrap:wrap;margin-top:.5rem}
+.detail-tags span{font-size:.6rem;padding:.12rem .4rem;border:1px solid var(--border);color:var(--text-dim);border-radius:3px;text-transform:uppercase;font-weight:500}
+.spinner-wheel{width:260px;height:260px;border-radius:50%;margin:1.2rem auto;border:2px solid var(--border);position:relative;transition:transform 4s cubic-bezier(.17,.67,.12,.99);box-shadow:var(--shadow-lg)}
+.spinner-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:.9rem;color:#fff;font-weight:600;cursor:pointer;z-index:10;box-shadow:0 2px 8px rgba(155,125,80,.3)}
+.spinner-center:hover{transform:translate(-50%,-50%) scale(1.05)}
+.spinner-pointer{position:absolute;top:-9px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:12px solid var(--accent);z-index:11}
+.spinner-result{margin-top:1.2rem;padding:1.3rem;background:var(--bg-card);border:1.5px solid var(--accent);border-radius:var(--radius-lg);display:none;box-shadow:var(--shadow-md)}
+.spinner-result.show{display:block}
+.exercise-item{padding:.8rem 1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:.4rem;cursor:pointer;transition:all .2s;box-shadow:var(--shadow-sm)}
+.exercise-item:hover{border-color:var(--accent)}.exercise-item.open{border-color:var(--accent)}
+.exercise-header{display:flex;justify-content:space-between;align-items:center}
+.exercise-header h4{font-family:var(--font-body);font-size:.85rem;font-weight:600}
+.exercise-tags{display:flex;gap:.25rem;margin-top:.2rem}
+.exercise-tags span{font-size:.6rem;padding:.1rem .35rem;border:1px solid var(--border);color:var(--text-muted);border-radius:3px;text-transform:uppercase;font-weight:500}
+.exercise-detail{display:none;margin-top:.6rem;padding-top:.6rem;border-top:1px solid var(--border);font-size:.84rem;color:var(--text-muted);line-height:1.7}
+.exercise-item.open .exercise-detail{display:block}
+.member-card{display:flex;align-items:center;gap:.8rem;padding:.8rem 1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)}
+.member-card:hover{border-color:var(--accent)}
+.member-avatar{width:40px;height:40px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-mid);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:.95rem;color:var(--accent);font-weight:600}
+.member-info h4{font-size:.85rem;font-weight:600}.member-info p{font-size:.72rem;color:var(--text-muted)}
+.member-stat{margin-left:auto;text-align:right}
+.member-stat-val{font-family:var(--font-display);font-size:1.3rem;color:var(--accent)}
+.member-stat-label{font-size:.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;font-weight:500}
+.quote-block{padding:1.8rem;border-left:3px solid var(--accent);background:var(--bg-card);border-radius:0 var(--radius-lg) var(--radius-lg) 0;box-shadow:var(--shadow-sm)}
+.quote-text{font-family:var(--font-display);font-size:1.25rem;font-style:italic;line-height:1.5;color:var(--text)}
+.quote-author{font-size:.76rem;color:var(--text-muted);margin-top:.5rem;font-weight:500}
+.strategy-block{padding:1.2rem 1.3rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:.7rem;box-shadow:var(--shadow-sm)}
+.strategy-block h4{color:var(--accent-dark);margin-bottom:.3rem;font-size:1rem}.strategy-block p{font-size:.86rem;color:var(--text-muted);line-height:1.7}
+.flow-step{display:flex;gap:1rem;margin-bottom:1rem}.flow-number{font-family:var(--font-display);font-size:1.8rem;color:var(--border);font-weight:300;min-width:36px}.flow-content h4{margin-bottom:.15rem;font-size:.95rem}.flow-content p{font-size:.84rem;color:var(--text-muted)}
+.weekly-card{background:var(--bg-card);border:1.5px solid var(--accent);border-radius:var(--radius-lg);padding:1.8rem;text-align:center;box-shadow:var(--shadow-md)}
+.fade-in{opacity:0;transform:translateY(12px);transition:all .5s var(--ease-out)}.fade-in.visible{opacity:1;transform:translateY(0)}
+.mt-1{margin-top:.6rem}.mt-2{margin-top:1.2rem}.mt-3{margin-top:2rem}.mb-1{margin-bottom:.6rem}.mb-2{margin-bottom:1.2rem}
+.text-center{text-align:center}.text-muted{color:var(--text-muted)}
+.page{display:none}.page.active{display:block}
+/* COGNITION */
+.cog-card{background:var(--bg-card);border:1px solid var(--cog-border);border-radius:var(--radius-lg);padding:1.5rem;text-align:center;cursor:pointer;transition:all .3s;box-shadow:var(--shadow-sm)}
+.cog-card:hover{border-color:var(--cog);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.cog-card.active-game{border-color:var(--cog);box-shadow:var(--shadow-lg)}
+.cog-icon{font-size:2rem;margin-bottom:.5rem}
+.cog-title{font-family:var(--font-display);font-size:1.1rem;color:var(--text);margin-bottom:.2rem}
+.cog-desc{font-size:.8rem;color:var(--text-muted)}
+.cog-time{font-size:.65rem;color:var(--cog);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem}
+.game-area{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:var(--shadow-md);margin:1.2rem 0}
+.game-grid{display:grid;gap:.4rem;margin:1rem 0}
+.game-cell{width:60px;height:60px;border-radius:var(--radius);border:1.5px solid var(--border);cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1.1rem;background:var(--bg-card)}
+.game-cell:hover{border-color:var(--cog)}
+.game-cell.lit{background:var(--cog);border-color:var(--cog);color:#fff}
+.game-cell.correct{background:var(--green);border-color:var(--green);color:#fff}
+.game-cell.wrong{background:var(--puls);border-color:var(--puls);color:#fff}
+.game-msg{font-family:var(--font-display);font-size:1.4rem;color:var(--text);margin:.8rem 0}
+.game-sub{font-size:.85rem;color:var(--text-muted)}
+.game-score{font-family:var(--font-display);font-size:2rem;color:var(--cog)}
+.breath-circle{width:160px;height:160px;border-radius:50%;border:3px solid var(--cog);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.3rem;color:var(--cog);transition:all 4s ease-in-out;margin:1.5rem auto}
+.breath-circle.expand{transform:scale(1.3);border-color:var(--cog);background:var(--cog-bg)}
+.breath-circle.hold{transform:scale(1.3);border-color:var(--accent)}
+.breath-circle.contract{transform:scale(1);border-color:var(--text-dim)}
+.return-banner{background:linear-gradient(135deg,var(--bg-card),rgba(107,127,160,.06));border:1.5px solid var(--cog-border);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow-md)}
+footer{padding:2rem 0;border-top:1px solid var(--border);text-align:center;font-size:.7rem;color:var(--text-dim);background:var(--bg-warm)}
+@media print{body{background:#fff;color:#111;font-size:10pt}nav,.btn,.filter-row,.nav-toggle,.check-done,.no-print,.version-tabs,.ex-video,.game-area,.cog-card{display:none!important}.card,.block,.member-card{box-shadow:none;border-color:#ddd;break-inside:avoid}h1,h2,h3,h4{color:#111!important}section{padding:.4rem 0}}
+
+/* LOGIN */
+#loginScreen{position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:var(--bg);display:flex;align-items:center;justify-content:center}
+.login-box{max-width:360px;width:90%;text-align:center}
+.login-box h1{margin-bottom:.3rem}.login-box p{font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem}
+.login-input{width:100%;padding:.65rem 1rem;font-size:.88rem;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-card);color:var(--text);font-family:var(--font-body);margin-bottom:.6rem;outline:none;transition:border .2s}
+.login-input:focus{border-color:var(--accent)}
+.login-error{color:var(--puls);font-size:.78rem;margin-bottom:.6rem;min-height:1.2rem}
+/* ADMIN */
+.admin-table{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:1rem}
+.admin-table th,.admin-table td{padding:.5rem .7rem;border-bottom:1px solid var(--border);text-align:left}
+.admin-table th{font-weight:600;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);background:var(--bg-warm)}
+.admin-table tr:hover td{background:var(--accent-dim)}
+.admin-stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.2rem;text-align:center;box-shadow:var(--shadow-sm)}
+.admin-stat-val{font-family:var(--font-display);font-size:2rem;color:var(--accent)}
+.admin-stat-label{font-size:.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-top:.1rem}
+/* CHAIR */
+.chair-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.3rem;box-shadow:var(--shadow-sm);transition:all .3s}
+.chair-card:hover{border-color:var(--accent);box-shadow:var(--shadow-md)}
+.chair-num{font-family:var(--font-display);font-size:1.6rem;color:var(--border);font-weight:300;margin-bottom:.2rem}
+.chair-name{font-family:var(--font-display);font-size:1.05rem;color:var(--text);margin-bottom:.2rem}
+.chair-detail{font-size:.82rem;color:var(--text-muted);line-height:1.65}
+.chair-cue{font-size:.8rem;color:var(--accent-dark);font-style:italic;font-family:var(--font-display);margin-top:.2rem}
+.chair-meta{font-size:.7rem;color:var(--text-dim);margin-top:.3rem}
+.team-label{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.5rem;margin-top:1.2rem}
+
+</style>
+</head>
+<body>
+
+<div id="loginScreen">
+<div class="login-box">
+<div style="font-family:var(--font-display);font-size:1.8rem;font-weight:600;color:var(--text)">S<span style="color:var(--accent)">T</span>ANDARD</div>
+<p>Krop · Hjerne · Standard</p>
+<input type="text" class="login-input" id="loginUser" placeholder="Bruger-ID" autocomplete="username">
+<input type="password" class="login-input" id="loginPw" placeholder="Adgangskode" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
+<div class="login-error" id="loginError"></div>
+<button class="btn btn-primary" style="width:100%" onclick="doLogin()">Log ind</button>
+<p style="font-size:.7rem;color:var(--text-dim);margin-top:1.5rem">Privat platform · Kun for medlemmer</p>
+</div>
+</div>
+
+<nav><div class="nav-inner">
+<div class="nav-logo" onclick="go('home')">S<span>T</span>ANDARD</div>
+<div class="nav-links" id="navLinks">
+<a onclick="go('home');closeNav()" data-page="home" class="active">Hjem</a>
+<a onclick="go('training');closeNav()" data-page="training">Træning</a>
+<a onclick="go('cognition');closeNav()" data-page="cognition">Kognition</a>
+<a onclick="go('spinner');closeNav()" data-page="spinner">Drejeskive</a>
+<a onclick="go('exercises');closeNav()" data-page="exercises">Øvelser</a>
+<a onclick="go('chair');closeNav()" data-page="chair">Stoltræning</a>
+<a onclick="go('members');closeNav()" data-page="members">Holdet</a>
+<a onclick="go('admin');closeNav()" data-page="admin" id="adminNav" style="display:none">Admin</a>
+</div>
+<button class="btn btn-ghost btn-sm no-print" style="font-size:.62rem;margin-left:.5rem" onclick="logout()" id="logoutBtn">Log ud</button>
+<button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button>
+</div></nav>
+<!-- HOME -->
+<div class="page active" id="page-home">
+<section id="hero" style="min-height:88vh;display:flex;align-items:center;padding-top:5rem;background:linear-gradient(170deg,var(--bg) 0%,var(--bg-hero) 100%);border-bottom:1px solid var(--border)"><div class="container">
+<div id="returnBanner"></div>
+<div class="fade-in" style="max-width:620px">
+<div style="font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-weight:600">Krop · Hjerne · Standard</div>
+<h1>Træn kroppen. <em>Skærp hovedet.</em></h1>
+<p style="font-size:1rem;color:var(--text-muted);max-width:480px;margin:1.2rem 0 1.8rem;line-height:1.8">Et fællesskab for mænd der vil holde sig fri, stærke og skarpe. Fysisk træning og kognitiv skarphed – uden bøvl.</p>
+<div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:.8rem">
+<p style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);width:100%;font-weight:600;margin-bottom:-.2rem">Hvordan har du det i dag?</p>
+<button class="filter-btn" data-mood="stiv" onclick="setHomeMood('stiv',this)">Stiv i kroppen</button>
+<button class="filter-btn active" data-mood="normal" onclick="setHomeMood('normal',this)">Normal</button>
+<button class="filter-btn" data-mood="overskud" onclick="setHomeMood('overskud',this)">Overskud</button>
+</div>
+<div id="homeRec" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.2rem;margin-bottom:1.5rem;box-shadow:var(--shadow-md)"></div>
+<div style="display:flex;gap:.7rem;flex-wrap:wrap"><button class="btn btn-primary" onclick="go('training')">Alle træninger</button><button class="btn btn-cog" onclick="go('cognition')">Kognitiv træning</button><button class="btn btn-outline" onclick="go('spinner')">Drejeskive</button></div>
+<div style="display:flex;gap:2rem;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border);flex-wrap:wrap">
+<div><div style="font-family:var(--font-display);font-size:1.8rem;color:var(--accent)">18</div><div style="font-size:.66rem;color:var(--text-muted)">Træningspas</div></div>
+<div><div style="font-family:var(--font-display);font-size:1.8rem;color:var(--accent)">54</div><div style="font-size:.66rem;color:var(--text-muted)">Versioner</div></div>
+<div><div style="font-family:var(--font-display);font-size:1.8rem;color:var(--cog)">8</div><div style="font-size:.66rem;color:var(--text-muted)">Kognitive øvelser</div></div>
+</div>
+</div></div></section>
+<section style="background:var(--bg-warm)"><div class="container"><div class="section-label fade-in">Fire søjler</div><h2 class="mb-2 fade-in">Krop <em>og</em> hjerne.</h2>
+<div class="grid-3" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">
+<div class="card fade-in" style="border-top:3px solid var(--mob)"><div class="card-tag tag-mob">Mobilitet</div><div class="card-title">Bevægelighed</div><p class="card-text">Hofter, ryg, skuldre. Kontrol.</p></div>
+<div class="card fade-in" style="border-top:3px solid var(--str)"><div class="card-tag tag-str">Styrke</div><div class="card-title">Funktionel kraft</div><p class="card-text">Squat, hinge, træk, pres, bæring.</p></div>
+<div class="card fade-in" style="border-top:3px solid var(--puls)"><div class="card-tag tag-puls">Puls</div><div class="card-title">Kredsløb</div><p class="card-text">Bæredygtig kondition.</p></div>
+<div class="card fade-in" style="border-top:3px solid var(--cog)"><div class="card-tag tag-cog">Kognition</div><div class="card-title">Skarphed</div><p class="card-text">Hukommelse, reaktion, fokus.</p></div>
+</div></div></section>
+<section><div class="container"><div class="fade-in"><div class="quote-block"><div class="quote-text" id="dailyQuote"></div><div class="quote-author" id="dailyQuoteAuthor"></div></div></div></div></section>
+</div>
+
+<!-- COGNITION -->
+<div class="page" id="page-cognition">
+<section style="padding-top:7rem"><div class="container">
+<div class="section-label">Kognitiv træning</div>
+<h2 class="mb-1">Hold dig <em>skarp.</em></h2>
+<p class="text-muted mb-2" style="max-width:500px">5 minutter dagligt. Reaktion, hukommelse, fokus og beslutningshastighed. Ingen leg – bare skarphed.</p>
+<div class="mb-2" id="cogDaily" style="background:var(--bg-card);border:1.5px solid var(--cog);border-radius:var(--radius-lg);padding:1.5rem;box-shadow:var(--shadow-md)"></div>
+<h3 class="mb-1">Øvelser</h3>
+<div class="grid-3" id="cogGrid"></div>
+<div id="cogGameContainer" style="display:none;margin-top:1.5rem">
+<button class="btn btn-ghost btn-sm mb-1" onclick="closeCogGame()">← Tilbage til øvelser</button>
+<div id="cogGameArea" class="game-area"></div>
+</div>
+<h3 class="mt-3 mb-1">Mental Reset</h3>
+<p class="text-muted mb-1" style="max-width:460px">2–3 minutter. Sæt tempoet ned. Skab klarhed.</p>
+<div style="display:flex;gap:.8rem;flex-wrap:wrap">
+<div class="cog-card" style="flex:1;min-width:200px" onclick="startBreathing()"><div class="cog-icon">🌬️</div><div class="cog-title">Pust ud</div><div class="cog-desc">Kontrolleret vejrtrækning. 4-7-8 metoden.</div><div class="cog-time">3 min</div></div>
+<div class="cog-card" style="flex:1;min-width:200px" onclick="startFocusReset()"><div class="cog-icon">🎯</div><div class="cog-title">Fokus Reset</div><div class="cog-desc">Nedregulér. Én ting ad gangen.</div><div class="cog-time">2 min</div></div>
+</div>
+<div id="resetArea" style="display:none" class="mt-2">
+<button class="btn btn-ghost btn-sm mb-1" onclick="document.getElementById('resetArea').style.display='none'">← Luk</button>
+<div id="resetContent" class="game-area"></div>
+</div>
+<h3 class="mt-3 mb-1">Krop + Hjerne</h3>
+<p class="text-muted mb-1" style="max-width:460px">Kombiner simpel bevægelse med kognitive opgaver.</p>
+<div class="grid-2" id="dualGrid"></div>
+</div></section></div>
+
+<!-- TRAINING -->
+<div class="page" id="page-training"><section style="padding-top:7rem"><div class="container">
+<div class="section-label">Træningsunivers</div><h2 class="mb-1">Alle <em>træninger.</em></h2>
+<p class="text-muted mb-2" style="max-width:500px">18 pas · 54 versioner. Videoinstruktioner på alle øvelser.</p>
+<div class="mb-1"><p style="font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.2rem;font-weight:600">Dagsform</p><div class="filter-row" id="moodF"><button class="filter-btn active" data-v="all">Alle</button><button class="filter-btn" data-v="stiv">Stiv</button><button class="filter-btn" data-v="normal">Normal</button><button class="filter-btn" data-v="overskud">Overskud</button><button class="filter-btn" data-v="reentry">Re-entry</button></div></div>
+<div class="mb-1"><p style="font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.2rem;font-weight:600">Fokus</p><div class="filter-row" id="focusF"><button class="filter-btn active" data-v="all">Alle</button><button class="filter-btn" data-v="golf">Golf</button><button class="filter-btn" data-v="ski">Ski</button><button class="filter-btn" data-v="hofter">Hofter</button><button class="filter-btn" data-v="balance">Balance</button><button class="filter-btn" data-v="styrke">Styrke</button><button class="filter-btn" data-v="puls">Puls</button></div></div>
+<div class="mb-2"><p style="font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.2rem;font-weight:600">Disciplin</p><div class="filter-row" id="typeF"><button class="filter-btn active" data-v="all">Alle</button><button class="filter-btn" data-v="mobilitet">Mobilitet</button><button class="filter-btn" data-v="styrke">Styrke</button><button class="filter-btn" data-v="puls">Puls</button></div></div>
+<div class="grid-2" id="trainingGrid"></div>
+</div></section></div>
+
+<!-- DETAIL -->
+<div class="page" id="page-detail"><section style="padding-top:7rem"><div class="container"><div id="detailContent" style="max-width:720px;margin:0 auto"></div></div></section></div>
+
+<!-- SPINNER -->
+<div class="page" id="page-spinner"><section style="padding-top:7rem"><div class="container text-center">
+<div class="section-label">Drejeskive</div><h2 class="mb-1">Lad os <em>vælge.</em></h2>
+<p class="text-muted mb-1" style="max-width:380px;margin:0 auto">Dagsform → Spin → Træn.</p>
+<div class="mb-1"><div class="filter-row" style="justify-content:center" id="spinMood"><button class="filter-btn" data-v="stiv">Stiv</button><button class="filter-btn active" data-v="normal">Normal</button><button class="filter-btn" data-v="overskud">Overskud</button></div></div>
+<div class="filter-row" style="justify-content:center" id="spinF"><button class="filter-btn active" data-v="all">Alle</button><button class="filter-btn" data-v="mobilitet">Mobilitet</button><button class="filter-btn" data-v="styrke">Styrke</button><button class="filter-btn" data-v="puls">Puls</button></div>
+<div style="position:relative;display:inline-block"><div class="spinner-pointer"></div><div class="spinner-wheel" id="spinWheel"><div class="spinner-center" onclick="spin()">SPIN</div></div></div>
+<div class="spinner-result" id="spinResult"><h3 id="spinName"></h3><p class="text-muted" id="spinDesc"></p><div class="mt-1" style="display:flex;gap:.5rem;justify-content:center"><button class="btn btn-outline btn-sm" onclick="spin()">Igen</button><button class="btn btn-primary btn-sm" id="spinGo">Start</button></div></div>
+</div></section></div>
+
+<!-- EXERCISES -->
+<div class="page" id="page-exercises"><section style="padding-top:7rem"><div class="container">
+<div class="section-label">Øvelsesbibliotek</div><h2 class="mb-1">Alle <em>øvelser.</em></h2>
+<div class="filter-row" id="exF"><button class="filter-btn active" data-v="all">Alle</button><button class="filter-btn" data-v="mobilitet">Mobilitet</button><button class="filter-btn" data-v="styrke">Styrke</button><button class="filter-btn" data-v="core">Core</button><button class="filter-btn" data-v="puls">Puls</button><button class="filter-btn" data-v="balance">Balance</button></div>
+<div id="exList"></div>
+</div></section></div>
+
+<!-- MEMBERS -->
+<div class="page" id="page-members"><section style="padding-top:7rem"><div class="container">
+<div class="section-label">Fællesskab</div><h2 class="mb-1">Holdet.</h2>
+<div class="grid-2" id="memberGrid"></div>
+</div></section></div>
+
+
+<!-- CHAIR -->
+<div class="page" id="page-chair"><section style="padding-top:7rem"><div class="container">
+<div class="section-label">Stoltræning</div>
+<h2 class="mb-1">Træning fra <em>stolen.</em></h2>
+<p class="text-muted mb-2" style="max-width:520px">Alle øvelser kan udføres siddende eller med stolen som støtte. Skånsom for knæ, hofter og ryg. Perfekt til stive dage, genoptræning eller som supplement.</p>
+<div class="grid-2" id="chairGrid"></div>
+<div class="mt-3">
+<h3 class="mb-1">Komplet stol-program <em>(20 min)</em></h3>
+<p class="text-muted mb-1">Udfør øvelserne i rækkefølge. Hold pauser efter behov.</p>
+<div id="chairProgram"></div>
+</div>
+</div></section></div>
+
+<!-- ADMIN -->
+<div class="page" id="page-admin"><section style="padding-top:7rem"><div class="container">
+<div class="section-label">Administration</div>
+<h2 class="mb-1">Admin <em>Dashboard</em></h2>
+<div id="adminContent"></div>
+</div></section></div>
+
+<footer><div class="container"><div class="nav-logo" style="margin-bottom:.4rem;display:inline-block">S<span>T</span>ANDARD</div><p>© 2026 STANDARD · Krop & Kognition</p></div></footer>
+<script>
+// ═══ EXERCISE LIBRARY ═══
+function vu(n){return'https://www.youtube.com/results?search_query='+encodeURIComponent(n+' exercise form')}
+const EX=[
+{id:'goblet-squat',n:'Goblet Squat',cat:'styrke',eq:'Håndvægt',ins:'Hold vægt foran bryst. Sænk hofter. Knæ over tæer. Pres op.',cue:'Bryst op, albuer mellem knæ.',prog:'Dybere, tungere, pause',reg:'Til stol, bodyweight',vid:vu('goblet squat')},
+{id:'rdl',n:'Romanian Deadlift',cat:'styrke',eq:'Håndvægte',ins:'Let bøjede knæ. Hæng fra hofte, flad ryg. Pres hofter frem.',cue:'Flad ryg, hofter bagud.',prog:'Tungere, single-leg',reg:'Uden vægt',vid:vu('romanian deadlift dumbbell')},
+{id:'row',n:'Bent-Over Row',cat:'styrke',eq:'Håndvægte',ins:'Foroverbøjet. Træk mod ribben. Klem skulderblade.',cue:'Albuer tæt, klem i top.',prog:'Tungere, pause',reg:'Lettere, siddende',vid:vu('dumbbell bent over row')},
+{id:'pushup',n:'Push-Up',cat:'styrke',eq:'Ingen',ins:'Hænder under skuldre. Sænk bryst. Pres op. Planke.',cue:'Core spændt, albuer 45°.',prog:'Langsom excentrisk',reg:'Knæ, forhøjet',vid:vu('push up proper form')},
+{id:'ohp',n:'Overhead Press',cat:'styrke',eq:'Håndvægte',ins:'Vægte ved skuldre. Pres lodret op.',cue:'Core stram, lodret bane.',prog:'Tungere, single-arm',reg:'Siddende',vid:vu('dumbbell overhead press')},
+{id:'pallof',n:'Pallof Press',cat:'core',eq:'Elastik',ins:'Vinkelret elastik. Pres ud. Modstå rotation.',cue:'Stram mave, modstå rotation.',prog:'Tungere, overhead',reg:'Tættere, lettere',vid:vu('pallof press band')},
+{id:'deadbug',n:'Dead Bug',cat:'core',eq:'Ingen',ins:'Ryg. Arme op, knæ 90°. Sænk modsatte arm+ben.',cue:'Lænd i gulv, langsomt.',prog:'Tilføj vægt',reg:'Kun ben',vid:vu('dead bug exercise')},
+{id:'birddog',n:'Bird-Dog',cat:'core',eq:'Ingen',ins:'Alle fire. Stræk modsatte arm+ben. Hold 2 sek.',cue:'Neutral ryg, lang linje.',prog:'Hold længere',reg:'Kun arm ELLER ben',vid:vu('bird dog exercise')},
+{id:'wgs',n:"World's Greatest Stretch",cat:'mobilitet',eq:'Ingen',ins:'Stort udfald. Roter arm mod loft.',cue:'Dybt udfald, thorax-rotation.',prog:'Tilføj flows',reg:'Hænder på blok',vid:vu('worlds greatest stretch')},
+{id:'9090',n:'90/90 Hofte Stretch',cat:'mobilitet',eq:'Ingen',ins:'Begge ben 90°. Lean fremover.',cue:'Sit oprejst, skub bryst frem.',prog:'Tilføj rotation',reg:'Pude under sæde',vid:vu('90 90 hip stretch')},
+{id:'thorax',n:'Thorax Rotation',cat:'mobilitet',eq:'Ingen',ins:'Sideleje, knæ 90°. Åbn arm bagud.',cue:'Knæ samlet, roter fra bryst.',prog:'Hold, vægt',reg:'Mindre range',vid:vu('thoracic rotation')},
+{id:'squat-rot',n:'Squat til Rotation',cat:'mobilitet',eq:'Ingen',ins:'Dyb squat. Arm op. Roter thorax.',cue:'Fod flad, roter thorax.',prog:'Dybere, hold',reg:'Hæl forhøjet',vid:vu('deep squat rotation')},
+{id:'chop',n:'Half Kneeling Chop',cat:'core',eq:'Elastik',ins:'Halv-knælende. Træk diagonalt ned.',cue:'Anti-rotation, stabil hofte.',prog:'Tungere',reg:'Lettere',vid:vu('half kneeling chop')},
+{id:'lift',n:'Half Kneeling Lift',cat:'core',eq:'Elastik',ins:'Halv-knælende. Løft diagonalt op.',cue:'Driv fra hofte.',prog:'Tungere',reg:'Lettere',vid:vu('half kneeling lift')},
+{id:'farmer',n:"Farmer's Walk",cat:'styrke',eq:'Håndvægte',ins:'Tunge vægte, gå oprejst.',cue:'Bryst op, grib hårdt.',prog:'Tungere',reg:'Lettere',vid:vu('farmers walk')},
+{id:'stepup',n:'Step-Up',cat:'styrke',eq:'Håndvægte/Step',ins:'Fod på step. Pres op. Kontrol ned.',cue:'Hele foden, oprejst.',prog:'Højere, tungere',reg:'Lavere',vid:vu('dumbbell step up')},
+{id:'bpa',n:'Band Pull-Apart',cat:'styrke',eq:'Elastik',ins:'Elastik foran bryst. Træk fra hinanden.',cue:'Skulderblade sammen.',prog:'Tungere',reg:'Lettere',vid:vu('band pull apart')},
+{id:'sl-rdl',n:'Single-Leg RDL',cat:'balance',eq:'Håndvægt',ins:'Stå ét ben. Lean fra hofte.',cue:'Flad ryg, blik fremad.',prog:'Tungere',reg:'Hold væg',vid:vu('single leg rdl')},
+{id:'lat-walk',n:'Lateral Band Walk',cat:'styrke',eq:'Elastik',ins:'Elastik ankler. Let squat. Sideskridt.',cue:'Knæ over tæer, lave hofter.',prog:'Tungere',reg:'Over knæ',vid:vu('lateral band walk')},
+{id:'bridge',n:'Glute Bridge',cat:'styrke',eq:'Ingen/Håndvægt',ins:'Ryg, knæ bøjet. Pres hofter op. Klem.',cue:'Driv fra hæle, klem 2 sek.',prog:'Single-leg, vægt',reg:'Dobbelt',vid:vu('glute bridge')},
+{id:'side-plank',n:'Side Plank',cat:'core',eq:'Ingen',ins:'Sideleje. Underarm. Løft hofter.',cue:'Hofte oppe, ingen rotation.',prog:'Hip dip',reg:'Fra knæ',vid:vu('side plank')},
+{id:'plank',n:'Plank',cat:'core',eq:'Ingen',ins:'Underarme, tæer. Linje. Hold.',cue:'Ingen svaj, klem baller.',prog:'Længere',reg:'Fra knæ',vid:vu('forearm plank')},
+{id:'mc',n:'Mountain Climbers',cat:'puls',eq:'Ingen',ins:'Planke. Knæ mod bryst. Skift. Langsomt.',cue:'Hofter stabile, jævn puls.',prog:'Hurtigere',reg:'Forhøjet',vid:vu('slow mountain climbers')},
+{id:'jj',n:'Jumping Jacks',cat:'puls',eq:'Ingen',ins:'Spring ud med arme+ben. Blød landing.',cue:'Blød landing, rytmisk.',prog:'Hurtigere',reg:'Step-out',vid:vu('jumping jacks')},
+{id:'kb-swing',n:'KB Swing (håndvægt)',cat:'puls',eq:'Håndvægt',ins:'Bredt. Sving mellem ben. Hofte-drive.',cue:'Hofte-drive, stram baller.',prog:'Tungere',reg:'Lettere',vid:vu('dumbbell swing')},
+{id:'cossack',n:'Cossack Squat',cat:'mobilitet',eq:'Ingen',ins:'Bredt. Sænk til én side.',cue:'Hæl i gulv, bryst op.',prog:'Dybere',reg:'Halv dybde',vid:vu('cossack squat')},
+{id:'couch',n:'Couch Stretch',cat:'mobilitet',eq:'Ingen',ins:'Knæ mod væg. Stræk hoftebøjer.',cue:'Klem balle, oprejst.',prog:'Mere oprejst',reg:'Mindre dybde',vid:vu('couch stretch')},
+{id:'thread',n:'Thread the Needle',cat:'mobilitet',eq:'Ingen',ins:'Alle fire. Arm under. Roter thorax.',cue:'Roter fra bryst.',prog:'Hold yderstilling',reg:'Mindre range',vid:vu('thread the needle')},
+{id:'catcow',n:'Cat-Cow',cat:'mobilitet',eq:'Ingen',ins:'Alle fire. Ryg op, ned. Segment for segment.',cue:'Ånd ind cow, ud cat.',prog:'Tilføj rotation',reg:'Siddende',vid:vu('cat cow')},
+{id:'wallsit',n:'Wall Sit',cat:'styrke',eq:'Ingen',ins:'Ryg mod væg. Lår parallelle. Hold.',cue:'Knæ over ankler.',prog:'Længere',reg:'Højere',vid:vu('wall sit')},
+{id:'lat-lunge',n:'Lateral Lunge',cat:'styrke',eq:'Ingen/Håndvægt',ins:'Skridt til side. Sænk. Pres tilbage.',cue:'Knæ over tå, bryst op.',prog:'Med vægt',reg:'Mindre range',vid:vu('lateral lunge')},
+{id:'suit-carry',n:'Suitcase Carry',cat:'styrke',eq:'Håndvægt',ins:'Én vægt. Gå oprejst. Modstå sidefleksion.',cue:'Anti-lateral, core stram.',prog:'Tungere',reg:'Lettere',vid:vu('suitcase carry')},
+{id:'ytw',n:'Prone Y-T-W',cat:'styrke',eq:'Ingen',ins:'Maven. Arme i Y, T, W. Små løft.',cue:'Klem skulderblade.',prog:'Hold, vægt',reg:'Mindre',vid:vu('prone Y T W')},
+{id:'tandem',n:'Tandem Balance',cat:'balance',eq:'Ingen',ins:'Hæl-mod-tå. Hold. Skift.',cue:'Blik fremad, core aktiv.',prog:'Luk øjne',reg:'Bredere',vid:vu('tandem balance')},
+];
+const QUOTES=[{t:"Disciplin er broen mellem mål og resultater.",a:"Jim Rohn"},{t:"Du behøver ikke at være ekstrem. Du skal bare være konsekvent.",a:"Ukendt"},{t:"Bevægelse er medicin.",a:"Hippokrates"},{t:"Kroppen er det eneste sted du har at bo i.",a:"Jim Rohn"},{t:"Konsistens trumfer talent.",a:"Ukendt"},{t:"Mål uden disciplin er bare ønsker.",a:"Dave Ramsey"},{t:"En skarp krop kræver en skarp hjerne.",a:"Ukendt"}];
+const MEMBERS={
+hold1:[
+{name:"Jeanet ØF",ini:"JØ",uid:"jeanet-of"},{name:"Jeanette B",ini:"JB",uid:"jeanette-b"},
+{name:"Iben S",ini:"IS",uid:"iben-s"},{name:"Ole W",ini:"OW",uid:"ole-w"},
+{name:"Mikkel B",ini:"MB",uid:"mikkel-b"},{name:"Christian B",ini:"CB",uid:"christian-b"}],
+hold2:[
+{name:"Aksel A",ini:"AA",uid:"aksel-a"},{name:"Emil N",ini:"EN",uid:"emil-n"},
+{name:"Simon A",ini:"SA",uid:"simon-a"},{name:"Jesper A",ini:"JA",uid:"jesper-a"},
+{name:"Martin H",ini:"MH",uid:"martin-h"}],
+coach:{name:"Thomas F",ini:"TF",uid:"thomas-f"}
+};
+function E(n,d,s,p,cue,ez,hd){return{n,d,s:s||'',p:p||'',cue,ez:ez||'—',hd:hd||'—'}}
+function B(title,type,time,ex){return{title,type,time,ex}}
+const T=[
+{id:1,type:"mobilitet",name:"Åbn & Kontrollér",purpose:"Hofte- og thoraxmobilitet",p2:"Golf, rotation",level:"Alle",eq:"Ingen",focus:["hofter","golf"],mood:["stiv","normal","reentry"],tags:["Hofter","Rotation","Re-entry","Stiv dag","Golf"],bestFor:"Golf, stiv dag, re-entry",format:"Flow + kontrol",
+full:{time:"50 min",blocks:[B("Opvarmning","warmup","10 min",[E("Cat-Cow","8 reps","","","Segment for segment","Siddende","Rotation"),E("World's Greatest Stretch","5 per side, hold 3 sek","","","Dybt udfald","Blok","Thorax driver"),E("Thorax Rotation","8 per side","","","Knæ samlet","Mindre","Hold 5 sek")]),B("Hofte-mobilitet","main","15 min",[E("90/90 Hofte Stretch","60 sek/side, 2 runder","","30 sek","Lean, flad ryg","Pude","Rotation"),E("Cossack Squat","3×6/side","3 sæt","45 sek","Hæl i gulv","Halv dybde","Dybere"),E("Couch Stretch","45 sek/side, 2 runder","","","Klem balle","Mindre","Mere oprejst")]),B("Styrke","main","15 min",[E("Goblet Squat","3×10, pause i bund","3 sæt","60 sek","Bryst op, dybde","Bodyweight","Tungere"),E("Half Kneeling Chop","3×8/side","3 sæt","45 sek","Anti-rotation","Lettere","Tungere"),E("Band Pull-Apart","3×12","3 sæt","30 sek","Skulderblade","Lettere","Pause")]),B("Core","main","6 min",[E("Dead Bug","3×8/side","3 sæt","30 sek","Lænd i gulv","Kun ben","Vægt"),E("Bird-Dog","3×8/side","3 sæt","30 sek","Neutral ryg","Kun arm/ben","Hold 4 sek")]),B("Cooldown","cool","4 min",[E("Child's Pose","45 sek","","","Ånd dybt")])]},
+short:{time:"25 min",blocks:[B("Opvarmning","warmup","5 min",[E("Cat-Cow","6 reps","","","Langsomt","Siddende"),E("WGS","4/side","","","Åbn","Blok")]),B("Hoveddel","main","16 min",[E("90/90 Stretch","45 sek/side","","","Lean","Pude"),E("Goblet Squat","2×10","2 sæt","45 sek","Dybde","Bodyweight"),E("Half Kneeling Chop","2×8/side","2 sæt","30 sek","Anti-rotation","Lettere"),E("Dead Bug","2×8/side","2 sæt","20 sek","Lænd i gulv","Kun ben")]),B("Cooldown","cool","4 min",[E("Child's Pose","30 sek","","","Slap af")])]},
+min:{time:"10 min",blocks:[B("Minimum","main","10 min",[E("Cat-Cow","6 reps","","","Roligt","Siddende"),E("WGS","3/side","","","Hold","Blok"),E("90/90 Stretch","30 sek/side","","","Lean","Pude"),E("Dead Bug","8/side","","","Langsomt","Kun ben")])]}},
+{id:2,type:"mobilitet",name:"Grundlaget",purpose:"Helkropsmobilitet",p2:"Re-entry, stive dage",level:"Begynder",eq:"Ingen",focus:["hofter","balance"],mood:["stiv","reentry"],tags:["Re-entry","Stiv dag","Helkrop"],bestFor:"Re-entry, stiv dag",format:"Roligt tempo",
+full:{time:"50 min",blocks:[B("Opvarmning","warmup","10 min",[E("Ankle Circles","10/retning/fod","","","Store cirkler","Siddende","Stående"),E("Cat-Cow","8 reps","","","Langsomt","Siddende","Rotation")]),B("Mobilitet","main","18 min",[E("WGS","5/side, hold 5 sek","","","Dybt, åbn","Blok","Thorax driver"),E("90/90 Stretch","45 sek/side, 2 runder","","20 sek","Lean","Pude","Rotation"),E("Thread the Needle","8/side","","","Thorax-rotation","Mindre","Hold"),E("Couch Stretch","40 sek/side","","","Klem","Mindre","60 sek")]),B("Bevægelser","main","12 min",[E("Bodyweight Squat","3×10","3 sæt","45 sek","Hæle i gulv","Stol","Pause i bund"),E("Glute Bridge","3×12","3 sæt","30 sek","Driv fra hæle")]),B("Core","main","6 min",[E("Plank","3×20 sek","3 sæt","30 sek","Stabil","Knæ","30 sek"),E("Dead Bug","2×6/side","2 sæt","20 sek","Lænd i gulv","Kun ben")]),B("Cooldown","cool","4 min",[E("Child's Pose","30 sek","","","Ånd")])]},
+short:{time:"25 min",blocks:[B("Opvarmning","warmup","5 min",[E("Cat-Cow","6 reps","","","Langsomt","Siddende")]),B("Hoveddel","main","16 min",[E("WGS","4/side","","","Hold","Blok"),E("Squat","2×10","2 sæt","30 sek","Langsom ned","Stol"),E("Glute Bridge","2×10","2 sæt","20 sek","Klem"),E("Dead Bug","2×6/side","2 sæt","","Langsomt","Kun ben")]),B("Cooldown","cool","4 min",[E("Child's Pose","45 sek","","","Slap af")])]},
+min:{time:"10 min",blocks:[B("Minimum","main","10 min",[E("Cat-Cow","6 reps","","","Roligt","Siddende"),E("WGS","3/side","","","Hold","Blok"),E("Glute Bridge","8 reps","","","Klem")])]}},
+{id:3,type:"mobilitet",name:"Rotation & Reach",purpose:"Rotationsmobilitet",p2:"Thorax, golf",level:"Middel",eq:"Elastik",focus:["golf","hofter"],mood:["normal","overskud"],tags:["Golf","Rotation","Thorax"],bestFor:"Golf, rotation",format:"Mobilitet + anti-rotation",
+full:{time:"50 min",blocks:[B("Opvarmning","warmup","8 min",[E("Thorax Rotation","10/side","","","Knæ samlet","Mindre","Hold"),E("Thread the Needle","8/side","","","Rotation","Mindre","Hold")]),B("Rotation","main","16 min",[E("Squat til Rotation","3×6/side","3 sæt","45 sek","Thorax, ikke lænd","Hæl op","Dybere"),E("Half Kneeling Chop","3×10/side","3 sæt","45 sek","Anti-rotation","Lettere","Tungere"),E("Half Kneeling Lift","3×10/side","3 sæt","45 sek","Driv fra hofte","Lettere","Tungere")]),B("Stabilitet","main","14 min",[E("Pallof Press","3×10/side","3 sæt","30 sek","Modstå rotation","Tættere","Overhead"),E("Band Pull-Apart","3×15","3 sæt","20 sek","Skulderblade","Lettere"),E("Single-Leg RDL","2×8/side","2 sæt","30 sek","Balance","Væg","Tungere")]),B("Core","main","8 min",[E("Side Plank","3×20 sek/side","3 sæt","20 sek","Hofte oppe","Knæ","Hip dip")]),B("Cooldown","cool","4 min",[E("Seated Twist","30 sek/side","","","Roter blidt")])]},
+short:{time:"25 min",blocks:[B("Opvarmning","warmup","5 min",[E("Thorax Rotation","6/side","","","Rolig","Mindre")]),B("Hoveddel","main","16 min",[E("Squat til Rotation","2×6/side","2 sæt","30 sek","Thorax","Hæl op"),E("Pallof Press","2×10/side","2 sæt","20 sek","Anti-rotation","Lettere"),E("Half Kneeling Chop","2×8/side","2 sæt","30 sek","Kontrol","Lettere"),E("Side Plank","2×20 sek/side","2 sæt","15 sek","Stabil","Knæ")]),B("Cooldown","cool","4 min",[E("Seated Twist","25 sek/side","","","Roligt")])]},
+min:{time:"10 min",blocks:[B("Minimum","main","10 min",[E("Thorax Rotation","6/side","","","Rolig"),E("Squat til Rotation","4/side","","","Kontrol","Hæl op"),E("Pallof Press","6/side","","","Modstå","Let")])]}},
+{id:4,type:"mobilitet",name:"Skulder & Rygsøjle",purpose:"Øvre krop mobilitet",p2:"Skuldersundhed",level:"Alle",eq:"Elastik",focus:["hofter","golf"],mood:["stiv","normal","reentry"],tags:["Skuldre","Ryg","Stiv dag"],bestFor:"Stiv overkrop",format:"3 stationer",
+full:{time:"50 min",blocks:[B("Opvarmning","warmup","8 min",[E("Cat-Cow","8 reps","","","Segment","Siddende","Rotation"),E("Thread the Needle","6/side","","","Thorax","Mindre","Hold")]),B("Skulder","main","12 min",[E("Band Pull-Apart","3×15","3 sæt","20 sek","Skulderblade","Lettere","Pause"),E("Prone Y-T-W","2×8/position","2 sæt","30 sek","Klem","Mindre","Hold, vægt")]),B("Thorax","main","12 min",[E("Thorax Rotation","3×8/side","3 sæt","20 sek","Roter bryst","Mindre","Hold"),E("Thread the Needle","3×6/side","3 sæt","20 sek","Dyb rotation","Mindre","Hold")]),B("Stabilitet","main","10 min",[E("Push-Up","3×8","3 sæt","45 sek","Core, 45°","Knæ","Langsom"),E("Bent-Over Row","3×10","3 sæt","45 sek","Klem","Lettere","Tungere")]),B("Core","main","5 min",[E("Bird-Dog","3×8/side","3 sæt","20 sek","Neutral ryg","Kun arm/ben","Hold 5 sek")]),B("Cooldown","cool","3 min",[E("Child's Pose","30 sek","","","Stræk lats")])]},
+short:{time:"25 min",blocks:[B("Opvarmning","warmup","4 min",[E("Cat-Cow","6 reps","","","Langsomt","Siddende")]),B("Hoveddel","main","17 min",[E("Thorax Rotation","2×6/side","2 sæt","15 sek","Roter","Mindre"),E("Band Pull-Apart","2×12","2 sæt","20 sek","Skulderblade","Lettere"),E("Push-Up","2×8","2 sæt","40 sek","Fuld range","Knæ"),E("Bird-Dog","2×8/side","2 sæt","20 sek","Neutral","Kun arm/ben")]),B("Cooldown","cool","4 min",[E("Child's Pose","30 sek","","","Ånd")])]},
+min:{time:"10 min",blocks:[B("Minimum","main","10 min",[E("Cat-Cow","6 reps","","","Langsomt","Siddende"),E("Thread the Needle","4/side","","","Rotation","Mindre"),E("Band Pull-Apart","10 reps","","","Skulderblade","Let")])]}},
+{id:5,type:"mobilitet",name:"Hofte-Dybden",purpose:"Dyb hoftemobilitet",p2:"Ski, gulv-til-stå",level:"Middel",eq:"Ingen",focus:["hofter","ski"],mood:["normal","overskud"],tags:["Hofter","Ski","Gulv-til-stå"],bestFor:"Hofter, ski",format:"Dybe holds",
+full:{time:"50 min",blocks:[B("Opvarmning","warmup","8 min",[E("90/90 Stretch","45 sek/side","","","Lean","Pude","Rotation")]),B("Dybe hofter","main","16 min",[E("Goblet Squat (dyb)","3×8, pause 3 sek","3 sæt","60 sek","Albuer skubber knæ","Bodyweight","Tungere"),E("Cossack Squat","3×6/side","3 sæt","45 sek","Hæl i gulv","Halv","Dybere"),E("Couch Stretch","50 sek/side","","","Klem balle","Mindre","Oprejst")]),B("Kontrol","main","14 min",[E("Glute Bridge (single-leg)","3×8/side","3 sæt","45 sek","Hofter lige","Dobbelt","Vægt"),E("Step-Up","3×8/side","3 sæt","45 sek","Hele fod","Lavere","Vægt"),E("Lateral Band Walk","3×10/retning","3 sæt","30 sek","Knæ over tæer","Over knæ","Tungere")]),B("Core","main","8 min",[E("Dead Bug","3×8/side","3 sæt","20 sek","Lænd i gulv","Kun ben","Vægt")]),B("Cooldown","cool","4 min",[E("Happy Baby","45 sek","","","Åbn hofter")])]},
+short:{time:"25 min",blocks:[B("Opvarmning","warmup","4 min",[E("90/90 Stretch","30 sek/side","","","Lean","Pude")]),B("Hoveddel","main","17 min",[E("Goblet Squat","2×8, pause","2 sæt","45 sek","Dybde","Bodyweight"),E("Cossack Squat","2×5/side","2 sæt","30 sek","Kontrol","Halv"),E("Glute Bridge","2×10","2 sæt","20 sek","Klem"),E("Dead Bug","2×6/side","2 sæt","","Kontrol","Kun ben")]),B("Cooldown","cool","4 min",[E("Happy Baby","30 sek","","","Ånd")])]},
+min:{time:"10 min",blocks:[B("Minimum","main","10 min",[E("90/90 Stretch","30 sek/side","","","Lean","Pude"),E("Cossack Squat","4/side","","","Kontrol","Halv"),E("Glute Bridge","8 reps","","","Klem")])]}},
+{id:6,type:"mobilitet",name:"Balance & Flow",purpose:"Balance, proprioception",p2:"Ski, faldforebyggelse",level:"Middel",eq:"Ingen",focus:["balance","ski"],mood:["normal","overskud"],tags:["Balance","Ski","Faldforebyggelse"],bestFor:"Balance, ski",format:"Flow + balance",
+full:{time:"50 min",blocks:[B("Opvarmning","warmup","8 min",[E("Single-Leg Balance","30 sek/ben","","","Aktiv fod","Hold","Luk øjne"),E("Tandem Balance","30 sek/fod","","","Hæl-tå","Bredere","Luk øjne")]),B("Balance-styrke","main","16 min",[E("Single-Leg RDL","3×8/side","3 sæt","45 sek","Flad ryg","Væg","Tungere"),E("Step-Up","3×8/side","3 sæt","45 sek","Hele fod","Lav","Vægt"),E("Lateral Band Walk","3×10/retning","3 sæt","30 sek","Knæ over tæer","Over knæ","Tungere")]),B("Flow","main","14 min",[E("Warrior I-II-III","3×/side","","","Langsomt","Kortere","Side angle"),E("Tree Pose","30 sek/side, 2 runder","","15 sek","Fod mod lår","Lavere","Luk øjne"),E("Squat til Rotation","2×5/side","2 sæt","20 sek","Flydende","Hæl op","Dybere")]),B("Core","main","8 min",[E("Side Plank","3×20 sek/side","3 sæt","15 sek","Hofte oppe","Knæ","Hip dip"),E("Pallof Press","3×8/side","3 sæt","20 sek","Modstå","Lettere","Tungere")]),B("Cooldown","cool","4 min",[E("Stående balance, øjne lukket","45 sek/ben","","","Find ro","Åbne øjne")])]},
+short:{time:"25 min",blocks:[B("Opvarmning","warmup","4 min",[E("Single-Leg Balance","20 sek/ben","","","Aktiv fod","Hold")]),B("Hoveddel","main","17 min",[E("Single-Leg RDL","2×6/side","2 sæt","30 sek","Balance","Væg"),E("Step-Up","2×6/side","2 sæt","30 sek","Kontrol","Lav"),E("Side Plank","2×15 sek/side","2 sæt","15 sek","Stabil","Knæ"),E("Tree Pose","20 sek/side","","","Stabil","Lav fod")]),B("Cooldown","cool","4 min",[E("Balance, øjne lukket","30 sek/ben","","","Ro")])]},
+min:{time:"10 min",blocks:[B("Minimum","main","10 min",[E("Single-Leg Balance","20 sek/ben","","","Aktiv fod","Hold"),E("Tandem Balance","20 sek/fod","","","Hæl-tå","Bred"),E("Single-Leg RDL","5/side","","","Kontrol","Væg")])]}},
+{id:7,type:"styrke",name:"Fundamentet",purpose:"Helkrops grundstyrke",p2:"Muskelmasse",level:"Alle",eq:"Håndvægte, Elastik",focus:["styrke"],mood:["normal","overskud"],tags:["Helkrop","Basis","Muskelmasse"],bestFor:"Generel styrke",format:"Supersæt",
+full:{time:"50 min",blocks:[B("Opvarmning","warmup","8 min",[E("WGS","4/side","","","Åbn","Blok"),E("Band Pull-Apart","12 reps","","","Skulderblade","Let"),E("Squat","10 reps","","","Opvarmning","Stol")]),B("Squat + Træk","main","14 min",[E("Goblet Squat","4×10","4 sæt","60 sek","Bryst op","Bodyweight","Tungere"),E("Bent-Over Row","4×10","4 sæt","60 sek","Klem skulderblade","Lettere","Tungere")]),B("Pres + Hofte","main","12 min",[E("Push-Up","3×8-12","3 sæt","45 sek","Core, fuld range","Knæ","Langsom"),E("Glute Bridge","3×12","3 sæt","45 sek","Klem","Uden vægt","Single-leg")]),B("Bæring","main","6 min",[E("Farmer's Walk","4×30 sek","4 sæt","45 sek","Oprejst, grib","Lettere","Tungere")]),B("Core","main","6 min",[E("Plank","3×25 sek","3 sæt","25 sek","Stabil","Knæ","30 sek"),E("Dead Bug","2×8/side","2 sæt","15 sek","Lænd i gulv","Kun ben")]),B("Cooldown","cool","4 min",[E("Child's Pose","30 sek","","","Ånd")])]},
+short:{time:"25 min",blocks:[B("Opvarmning","warmup","4 min",[E("WGS","3/side","","","Åbn","Blok")]),B("Hoveddel","main","18 min",[E("Goblet Squat","3×8","3 sæt","45 sek","Dybde","Bodyweight"),E("Push-Up","3×8","3 sæt","45 sek","Fuld range","Knæ"),E("Bent-Over Row","3×8","3 sæt","45 sek","Klem","Lettere"),E("Plank","2×20 sek","2 sæt","20 sek","Stabil","Knæ")]),B("Cooldown","cool","3 min",[E("Child's Pose","30 sek","","","Ånd")])]},
+min:{time:"10 min",blocks:[B("Minimum","main","10 min",[E("Goblet Squat","2×8","2 sæt","30 sek","Dybde","Bodyweight"),E("Push-Up","2×6","2 sæt","30 sek","Fuld range","Knæ"),E("Plank","20 sek","","","Stabil","Knæ")])]}},
+{id:8,type:"styrke",name:"Træk & Bagkæde",purpose:"Posterior kæde",p2:"Ryg, holdning",level:"Middel",eq:"Håndvægte, Elastik",focus:["styrke","hofter"],mood:["normal","overskud"],tags:["Træk","Ryg","Holdning"],bestFor:"Rygsundhed",format:"Træk-fokus",
+full:{time:"50 min",blocks:[B("Opvarmning","warmup","8 min",[E("Cat-Cow","8 reps","","","Langsomt","Siddende"),E("Glute Bridge","10 reps","","","Klem"),E("Band Pull-Apart","12 reps","","","Skulderblade","Let")]),B("Hinge + Træk","main","16 min",[E("Romanian Deadlift","4×10","4 sæt","60 sek","Flad ryg","Uden vægt","Tungere"),E("Bent-Over Row","4×10","4 sæt","60 sek","Klem","Lettere","Tungere")]),B("Unilateral","main","12 min",[E("Single-Leg RDL","3×8/side","3 sæt","45 sek","Balance","Væg","Tungere"),E("Glute Bridge (vægtet)","3×12","3 sæt","30 sek","Klem","Uden vægt","Single-leg"),E("Prone Y-T-W","2×8/position","2 sæt","20 sek","Klem","Mindre","Vægt")]),B("Core","main","6 min",[E("Bird-Dog","3×8/side","3 sæt","20 sek","Neutral","Kun arm/ben","Hold 4 sek"),E("Side Plank","3×20 sek/side","3 sæt","15 sek","Hofte oppe","Knæ","Hip dip")]),B("Finisher","main","4 min",[E("KB Swing","3×12","3 sæt","30 sek","Hofte-drive","Lettere","Tungere")]),B("Cooldown","cool","4 min",[E("Forward Fold","30 sek","","","Hæng tungt")])]},
+short:{time:"25 min",blocks:[B("Opvarmning","warmup","4 min",[E("Cat-Cow","6 reps","","","Langsomt","Siddende"),E("Glute Bridge","8 reps","","","Klem")]),B("Hoveddel","main","18 min",[E("Romanian Deadlift","3×8","3 sæt","45 sek","Flad ryg","Uden vægt"),E("Bent-Over Row","3×8","3 sæt","45 sek","Klem","Lettere"),E("Bird-Dog","2×8/side","2 sæt","15 sek","Neutral","Kun arm/ben")]),B("Cooldown","cool","3 min",[E("Forward Fold","30 sek","","","Slap af")])]},
+min:{time:"10 min",blocks:[B("Minimum","main","10 min",[E("Glute Bridge","10 reps","","","Klem"),E("Romanian Deadlift","2×8","2 sæt","30 sek","Flad ryg","Uden vægt"),E("Bird-Dog","6/side","","","Neutral","Kun arm/ben")])]}},
+{id:9,type:"styrke",name:"Pres & Core",purpose:"Presøvelser og core",p2:"Overkrop",level:"Middel",eq:"Håndvægte, Elastik",focus:["styrke"],mood:["normal","overskud"],tags:["Pres","Core","Overkrop"],bestFor:"Overkrop, core",format:"Klassisk + finisher",
+full:{time:"50 min",blocks:[B("Opvarmning","warmup","8 min",[E("Push-Up (let)","6 reps","","","Aktivering","Knæ"),E("Pallof Press","6/side, let","","","Core","Tættere")]),B("Pres","main","16 min",[E("Push-Up","4×8-10","4 sæt","60 sek","Core, fuld range","Knæ","Langsom"),E("Overhead Press","3×10","3 sæt","60 sek","Core stram","Siddende","Tungere"),E("Band Pull-Apart","3×15","3 sæt","—","Posterior","Lettere")]),B("Anti-rotation","main","12 min",[E("Pallof Press","3×10/side","3 sæt","30 sek","Modstå","Tættere","Overhead"),E("Suitcase Carry","3×30 sek/side","3 sæt","30 sek","Anti-lateral","Lettere","Tungere")]),B("Core","main","10 min",[E("Dead Bug","3×10/side","3 sæt","20 sek","Lænd i gulv","Kun ben","Vægt"),E("Plank","3×30 sek","3 sæt","20 sek","Stabil","Knæ","40 sek"),E("Side Plank","2×20 sek/side","2 sæt","15 sek","Hofte oppe","Knæ")]),B("Cooldown","cool","4 min",[E("Child's Pose","30 sek","","","Slap af")])]},
+short:{time:"25 min",blocks:[B("Opvarmning","warmup","4 min",[E("Push-Up (let)","5 reps","","","Aktivering","Knæ")]),B("Hoveddel","main","18 min",[E("Push-Up","3×8","3 sæt","45 sek","Fuld range","Knæ"),E("Overhead Press","2×8","2 sæt","45 sek","Core stram","Lettere"),E("Pallof Press","2×8/side","2 sæt","20 sek","Anti-rotation","Lettere"),E("Plank","2×25 sek","2 sæt","20 sek","Stabil","Knæ")]),B("Cooldown","cool","3 min",[E("Child's Pose","30 sek","","","Slap af")])]},
+min:{time:"10 min",blocks:[B("Minimum","main","10 min",[E("Push-Up","2×6","2 sæt","30 sek","Fuld range","Knæ"),E("Pallof Press","6/side","","","Modstå","Let"),E("Plank","20 sek","","","Stabil","Knæ")])]}},
+{id:10,type:"styrke",name:"Ben & Lateral",purpose:"Underkrop, lateral kraft",p2:"Ski",level:"Middel",eq:"Håndvægte, Elastik",focus:["styrke","ski","balance"],mood:["normal","overskud"],tags:["Ben","Lateral","Ski"],bestFor:"Ski, benstyrke",format:"Supersæt",
+full:{time:"50 min",blocks:[B("Opvarmning","warmup","8 min",[E("Squat","10 reps","","","Opvarmning","Stol"),E("Lateral Band Walk","10/retning","","","Aktivér hofter","Over knæ")]),B("Bilateral","main","14 min",[E("Goblet Squat","4×10","4 sæt","60 sek","Dyb","Bodyweight","Tungere"),E("Romanian Deadlift","3×10","3 sæt","60 sek","Flad ryg","Lettere","Tungere")]),B("Lateral","main","14 min",[E("Lateral Lunge","3×8/side","3 sæt","45 sek","Knæ over tå","Uden vægt","Med vægt"),E("Step-Up","3×8/side","3 sæt","45 sek","Hele fod","Lav","Højere"),E("Lateral Band Walk","3×12/retning","3 sæt","20 sek","Lave hofter","Lettere","Tungere")]),B("Core","main","8 min",[E("Pallof Press","3×10/side","3 sæt","20 sek","Anti-rotation","Lettere"),E("Side Plank","3×20 sek/side","3 sæt","15 sek","Stabil","Knæ")]),B("Cooldown","cool","6 min",[E("90/90 Stretch","40 sek/side","","","Ånd")])]},
+short:{time:"25 min",blocks:[B("Opvarmning","warmup","4 min",[E("Squat","8 reps","","","Opvarmning","Stol")]),B("Hoveddel","main","18 min",[E("Goblet Squat","3×8","3 sæt","45 sek","Dyb","Bodyweight"),E("Lateral Lunge","2×6/side","2 sæt","30 sek","Kontrol","Ingen vægt"),E("Step-Up","2×6/side","2 sæt","30 sek","Hele fod","Lav"),E("Side Plank","2×15 sek/side","2 sæt","15 sek","Stabil","Knæ")]),B("Cooldown","cool","3 min",[E("90/90 Stretch","25 sek/side","","","Ånd")])]},
+min:{time:"10 min",blocks:[B("Minimum","main","10 min",[E("Goblet Squat","2×8","2 sæt","30 sek","Dyb","Bodyweight"),E("Lateral Lunge","4/side","","","Kontrol"),E("Plank","20 sek","","","Stabil","Knæ")])]}},
+{id:11,type:"styrke",name:"Funktionel Kraft",purpose:"Sammensatte bevægelser",p2:"Robusthed",level:"Øvet",eq:"Håndvægte, Elastik",focus:["styrke","ski"],mood:["overskud"],tags:["Funktionel","Øvet","Robusthed"],bestFor:"Overskudsdag",format:"EMOM + bæring",
+full:{time:"50 min",blocks:[B("Opvarmning","warmup","8 min",[E("WGS","4/side","","","Åbn","Blok"),E("KB Swing (let)","8 reps","","","Hofte-drive"),E("Band Pull-Apart","10 reps","","","Skulderblade","Let")]),B("EMOM 12 min","main","12 min",[E("Min 1: Romanian Deadlift ×8","Moderate","EMOM","Rest","Flad ryg","Lettere","Tungere"),E("Min 2: Push-Up ×6-8","3 sek ned","EMOM","Rest","Kontrol","Knæ","Deficit"),E("Min 3: Step-Up ×6/side","Med vægte","EMOM","Rest","Extension","Ingen vægt","Tungere")]),B("Bæring","main","12 min",[E("Farmer's Walk","4×40 sek","4 sæt","45 sek","Tunge, oprejst","Lettere","Tungere"),E("Suitcase Carry","3×30 sek/side","3 sæt","30 sek","Anti-lateral","Lettere","Tungere")]),B("Core","main","6 min",[E("Half Kneeling Chop","3×8/side","3 sæt","20 sek","Anti-rotation","Lettere"),E("Plank Shoulder Tap","3×6/side","3 sæt","20 sek","Ingen rotation","Standard plank")]),B("Cooldown","cool","4 min",[E("Child's Pose → Cobra","5 reps","","","Ånd med")])]},
+short:{time:"25 min",blocks:[B("Opvarmning","warmup","4 min",[E("WGS","3/side","","","Åbn","Blok")]),B("Hoveddel","main","18 min",[E("Romanian Deadlift","3×8","3 sæt","45 sek","Flad ryg","Lettere"),E("Push-Up","3×6","3 sæt","45 sek","3 sek ned","Knæ"),E("Farmer's Walk","3×30 sek","3 sæt","30 sek","Oprejst","Lettere"),E("Half Kneeling Chop","2×6/side","2 sæt","20 sek","Kontrol","Lettere")]),B("Cooldown","cool","3 min",[E("Child's Pose","30 sek","","","Slap af")])]},
+min:{time:"10 min",blocks:[B("Minimum","main","10 min",[E("Romanian Deadlift","2×8","2 sæt","30 sek","Flad ryg","Uden vægt"),E("Push-Up","2×6","2 sæt","30 sek","Kvalitet","Knæ"),E("Farmer's Walk","2×20 sek","","","Oprejst","Lettere")])]}},
+{id:12,type:"styrke",name:"Robust Ryg",purpose:"Rygstyrke, anti-smerte",p2:"Rygvenlig",level:"Alle",eq:"Håndvægte, Elastik",focus:["styrke","hofter"],mood:["stiv","normal","reentry"],tags:["Ryg","Re-entry","Stiv dag"],bestFor:"Ryg, stiv dag, re-entry",format:"Rolig kvalitet",
+full:{time:"50 min",blocks:[B("Opvarmning","warmup","10 min",[E("Cat-Cow","10 reps","","","Segment","Siddende","Rotation"),E("Thread the Needle","8/side","","","Thorax","Mindre","Hold"),E("Glute Bridge","10 reps","","","Klem")]),B("Træk","main","16 min",[E("Bent-Over Row","4×10","4 sæt","60 sek","Klem, neutral","Lettere","Tungere"),E("Band Pull-Apart","3×15","3 sæt","—","Retraction","Lettere"),E("Romanian Deadlift (let)","3×10","3 sæt","60 sek","Teknik","Uden vægt","Tungere")]),B("Ryg-mobilitet","main","10 min",[E("Cat-Cow → Child's Pose → Cobra","6 flows","","","Ånd med","Langsomt","Hold"),E("Prone Y-T-W","2×8/position","2 sæt","20 sek","Klem","Mindre","Vægt")]),B("Core","main","10 min",[E("Bird-Dog","3×10/side, hold 3 sek","3 sæt","20 sek","Neutral ryg","Kun arm/ben","Hold 5 sek"),E("Dead Bug","3×8/side","3 sæt","20 sek","Lænd i gulv","Kun ben","Vægt"),E("Side Plank","2×15 sek/side","2 sæt","15 sek","Stabil","Knæ")]),B("Cooldown","cool","4 min",[E("Child's Pose","30 sek","","","Ånd")])]},
+short:{time:"25 min",blocks:[B("Opvarmning","warmup","5 min",[E("Cat-Cow","8 reps","","","Langsomt","Siddende"),E("Glute Bridge","8 reps","","","Klem")]),B("Hoveddel","main","16 min",[E("Bent-Over Row","3×8","3 sæt","45 sek","Klem","Lettere"),E("Romanian Deadlift","2×8","2 sæt","45 sek","Teknik","Uden vægt"),E("Bird-Dog","2×8/side","2 sæt","15 sek","Neutral","Kun arm/ben"),E("Dead Bug","2×6/side","2 sæt","","Lænd i gulv","Kun ben")]),B("Cooldown","cool","4 min",[E("Child's Pose","30 sek","","","Ånd")])]},
+min:{time:"10 min",blocks:[B("Minimum","main","10 min",[E("Cat-Cow","6 reps","","","Langsomt","Siddende"),E("Bird-Dog","6/side","","","Neutral","Kun arm/ben"),E("Glute Bridge","8 reps","","","Klem")])]}},
+{id:13,type:"puls",name:"Steady State",purpose:"Grundlæggende kredsløb",p2:"Energi",level:"Alle",eq:"Ingen",focus:["puls","energi"],mood:["normal"],tags:["Kredsløb","Moderat","Energi"],bestFor:"Kredsløb, alle",format:"Kontinuerligt",
+full:{time:"50 min",blocks:[B("Opvarmning","warmup","8 min",[E("March in Place","2 min","","","Find rytme","Langsomt"),E("Squat","8 reps","","","Led-opvarmning","Stol")]),B("Styrke","main","12 min",[E("Goblet Squat","3×10","3 sæt","40 sek","Moderat","Bodyweight"),E("Push-Up","3×8","3 sæt","40 sek","Fuld range","Knæ"),E("Glute Bridge","3×12","3 sæt","30 sek","Klem")]),B("Pulsarbejde","main","18 min",[E("Jumping Jacks","45/15 × 4","4 runder","15 sek","Jævn rytme","Step-out"),E("Mountain Climbers","30/15 × 4","4 runder","15 sek","Stabil planke","Forhøjet"),E("March (aktiv pause)","60 sek ml. blokke","","","Hold gang")]),B("Core","main","6 min",[E("Plank","3×25 sek","3 sæt","25 sek","Stabil","Knæ"),E("Dead Bug","2×6/side","2 sæt","15 sek","Langsomt","Kun ben")]),B("Cooldown","cool","6 min",[E("Stræk + vejrtrækning","3 min","","","Sæt ned")])]},
+short:{time:"25 min",blocks:[B("Opvarmning","warmup","4 min",[E("March","1 min","","","Rytme")]),B("Hoveddel","main","18 min",[E("Goblet Squat","2×8","2 sæt","30 sek","Tempo","Bodyweight"),E("Jumping Jacks","40/20 × 3","3 runder","20 sek","Rytmisk","Step-out"),E("Mountain Climbers","30/15 × 3","3 runder","15 sek","Kontrol","Forhøjet"),E("Plank","2×20 sek","2 sæt","15 sek","Stabil","Knæ")]),B("Cooldown","cool","3 min",[E("Stræk","2 min","","","Sæt ned")])]},
+min:{time:"10 min",blocks:[B("Minimum","main","10 min",[E("March","1 min","","","Byg op"),E("Jumping Jacks","30/15 × 3","3 runder","15 sek","Let","Step-out"),E("Squat","8 reps","","","Roligt","Stol")])]}},
+{id:14,type:"puls",name:"Intervaller",purpose:"Kontrollerede intervaller",p2:"Ski-kondition",level:"Middel",eq:"Håndvægte",focus:["puls","ski"],mood:["overskud"],tags:["Intervaller","Ski","Kapacitet"],bestFor:"Overskudsdag, ski",format:"3-bloks",
+full:{time:"50 min",blocks:[B("Opvarmning","warmup","8 min",[E("March → Jog","3 min","","","Byg op"),E("WGS","3/side","","","Åbn","Blok")]),B("Styrke","main","10 min",[E("Goblet Squat","3×8","3 sæt","40 sek","Moderat","Bodyweight"),E("Bent-Over Row","3×8","3 sæt","40 sek","Hurtig teknik","Lettere")]),B("Intervaller","main","20 min",[E("Blok 1: KB Swing","40/20 × 4","4 runder","20 sek + 60 sek","Hofte-drive","Lettere, 30/30"),E("Blok 2: Mountain Climbers","30/30 × 4","4 runder","30 sek + 60 sek","Stabil planke","Forhøjet"),E("Blok 3: Jumping Jacks","40/20 × 4","4 runder","20 sek","Høj rytme","Step-out")]),B("Core","main","6 min",[E("Plank","3×25 sek","3 sæt","20 sek","Stabil","Knæ"),E("Pallof Press","2×8/side","2 sæt","15 sek","Kontrol","Lettere")]),B("Cooldown","cool","6 min",[E("Walk + vejrtrækning","3 min","","","Sæt ned")])]},
+short:{time:"25 min",blocks:[B("Opvarmning","warmup","4 min",[E("March","1 min","","","Byg op")]),B("Intervaller","main","18 min",[E("KB Swing","35/25 × 3","3 runder","25 sek + 45 sek","Hofte-drive","Lettere"),E("Jumping Jacks","35/25 × 3","3 runder","25 sek","Rytmisk","Step-out"),E("Plank","2×20 sek","2 sæt","15 sek","Stabil","Knæ")]),B("Cooldown","cool","3 min",[E("Walk","2 min","","","Sæt ned")])]},
+min:{time:"10 min",blocks:[B("Minimum","main","10 min",[E("March","1 min","","","Rytme"),E("Jumping Jacks","30/15 × 4","4 runder","15 sek","Rytmisk","Step-out"),E("Vejrtrækning","1 min","","","Sæt ned")])]}},
+{id:15,type:"puls",name:"Flow & Puls",purpose:"Bevægelses-flow",p2:"Energi",level:"Alle",eq:"Ingen",focus:["puls","balance","energi"],mood:["normal","overskud"],tags:["Flow","Energi","Helkrop"],bestFor:"Energi, flow",format:"4-min runder",
+full:{time:"50 min",blocks:[B("Opvarmning","warmup","8 min",[E("Dynamisk kæde","WGS + cirkler, 2×","","","Flydende"),E("Cat-Cow","6 reps","","","Ånd med","Siddende")]),B("Styrke","main","10 min",[E("Squat","3×10","3 sæt","30 sek","Jævnt","Stol"),E("Push-Up","3×6-8","3 sæt","30 sek","Kontrol","Knæ"),E("Glute Bridge","3×10","3 sæt","20 sek","Klem")]),B("Flow-runder","main","20 min",[E("JJ → Squat → MC → March","4 runder á 4 min","4 runder","60 sek march","Uafbrudt","Step-out, forhøjet")]),B("Core","main","6 min",[E("Dead Bug","2×8/side","2 sæt","15 sek","Langsomt","Kun ben"),E("Side Plank","2×15 sek/side","2 sæt","15 sek","Hofte oppe","Knæ")]),B("Cooldown","cool","6 min",[E("Stræk + meditation","3 min","","","Mærk kroppen")])]},
+short:{time:"25 min",blocks:[B("Opvarmning","warmup","4 min",[E("Dynamisk kæde","1 gennemgang","","","Flydende")]),B("Hoveddel","main","18 min",[E("Squat","2×8","2 sæt","20 sek","Tempo","Stol"),E("Flow-runder","3 runder × 4 min","3 runder","45 sek","Bevæg uafbrudt","Lettere")]),B("Cooldown","cool","3 min",[E("Stræk","2 min","","","Sæt ned")])]},
+min:{time:"10 min",blocks:[B("Minimum","main","10 min",[E("March → JJ → Squat → March","2 runder × 4 min","2 runder","60 sek","Let tempo","Step-out")])]}},
+{id:16,type:"puls",name:"Cardio & Carry",purpose:"Bæring + kredsløb",p2:"Funktionel kapacitet",level:"Middel",eq:"Håndvægte",focus:["puls","styrke"],mood:["overskud"],tags:["Carry","Funktionel","Greb"],bestFor:"Funktionel kapacitet",format:"Carry → puls",
+full:{time:"50 min",blocks:[B("Opvarmning","warmup","8 min",[E("Jumping Jacks","1 min","","","Blød","Step-out"),E("WGS","3/side","","","Åbn","Blok")]),B("Styrke","main","10 min",[E("Goblet Squat","3×8","3 sæt","40 sek","Moderat","Bodyweight"),E("Bent-Over Row","3×8","3 sæt","40 sek","Klem","Lettere")]),B("Carry + Puls","main","20 min",[E("Farmer → JJ → Suitcase → MC","45s/40s/30s/side/30s","3 runder","60 sek ml.","Konsistent","Lettere, 2 runder")]),B("Core","main","6 min",[E("Plank","3×25 sek","3 sæt","20 sek","Stabil","Knæ"),E("Pallof Press","2×8/side","2 sæt","15 sek","Anti-rotation","Lettere")]),B("Cooldown","cool","6 min",[E("Shake out + stræk","3 min","","","Slap af")])]},
+short:{time:"25 min",blocks:[B("Opvarmning","warmup","4 min",[E("Jumping Jacks","45 sek","","","Let","Step-out")]),B("Hoveddel","main","18 min",[E("Goblet Squat","2×8","2 sæt","30 sek","Tempo","Bodyweight"),E("Farmer→JJ→Suitcase→MC","2 runder, 30 sek/øvelse","2 runder","45 sek","Konsistent","Lettere"),E("Plank","2×20 sek","2 sæt","15 sek","Stabil","Knæ")]),B("Cooldown","cool","3 min",[E("Shake out","2 min","","","Slap af")])]},
+min:{time:"10 min",blocks:[B("Minimum","main","10 min",[E("Farmer's Walk","3×30 sek","3 sæt","20 sek","Oprejst","Lettere"),E("Jumping Jacks","30 sek × 2","2 runder","15 sek","Rytmisk","Step-out")])]}},
+{id:17,type:"puls",name:"Ski-Kondition",purpose:"Ski-specifik kondition",p2:"Sæsonforberedelse",level:"Middel",eq:"Elastik",focus:["ski","puls","balance"],mood:["overskud"],tags:["Ski","Kondition","Lateral"],bestFor:"Ski",format:"3 stationer",
+full:{time:"50 min",blocks:[B("Opvarmning","warmup","8 min",[E("Jumping Jacks","1 min","","","Varm","Step-out"),E("Lateral Band Walk","10/retning","","","Aktivér","Over knæ"),E("Single-Leg Balance","15 sek/ben","","","Stabil","Hold")]),B("Benstyrke","main","10 min",[E("Goblet Squat","3×10","3 sæt","40 sek","Dybde","Bodyweight"),E("Single-Leg RDL","3×8/side","3 sæt","30 sek","Balance","Væg")]),B("Lateral","main","10 min",[E("Lateral Lunge","3×8/side","3 sæt","30 sek","Knæ over tå","Ingen vægt","Med vægt"),E("Lateral Band Walk","3×12/retning","3 sæt","20 sek","Lave hofter","Lettere")]),B("Ski-puls","main","12 min",[E("Skater Hops","3×10/side","3 sæt","30 sek","Blød landing","Step lateral"),E("Wall Sit","3×30 sek","3 sæt","30 sek","Lår parallelle","Højere, 20 sek"),E("Jumping Jacks","3×40 sek","3 sæt","20 sek","Tempo","Step-out")]),B("Core","main","6 min",[E("Side Plank","3×20 sek/side","3 sæt","15 sek","Hofte oppe","Knæ"),E("Bird-Dog","2×8/side","2 sæt","15 sek","Kontrol","Kun arm/ben")]),B("Cooldown","cool","4 min",[E("Quad + Calf Stretch","25 sek/side","","","Ånd")])]},
+short:{time:"25 min",blocks:[B("Opvarmning","warmup","4 min",[E("Jumping Jacks","45 sek","","","Varm","Step-out"),E("Lateral Band Walk","8/retning","","","Aktivering","Over knæ")]),B("Hoveddel","main","18 min",[E("Goblet Squat","2×8","2 sæt","30 sek","Dybde","Bodyweight"),E("Lateral Lunge","2×6/side","2 sæt","20 sek","Kontrol"),E("Skater Hops","2×8/side","2 sæt","20 sek","Blød landing","Step"),E("Wall Sit","2×25 sek","2 sæt","25 sek","Hold","Højere")]),B("Cooldown","cool","3 min",[E("Stræk","Quad, calf","","","Ånd")])]},
+min:{time:"10 min",blocks:[B("Minimum","main","10 min",[E("Squat","10 reps","","","Fuldt range","Stol"),E("Lateral Lunge","5/side","","","Kontrol"),E("Wall Sit","20 sek","","","Hold"),E("Jumping Jacks","30 sek","","","Puls","Step-out")])]}},
+{id:18,type:"puls",name:"Golf-Kondition",purpose:"Rotationskondition",p2:"Thorax, hofte",level:"Middel",eq:"Elastik, Håndvægt",focus:["golf","puls"],mood:["normal","overskud"],tags:["Golf","Rotation","Kondition"],bestFor:"Golf",format:"Rotations-cirkler",
+full:{time:"50 min",blocks:[B("Opvarmning","warmup","8 min",[E("Thorax Rotation","8/side","","","Roter bryst","Mindre"),E("90/90 Transitions","8 switches","","","Kontrol"),E("WGS","4/side","","","Åbn","Blok")]),B("Rotation","main","14 min",[E("Half Kneeling Chop","3×10/side","3 sæt","40 sek","Anti-rotation","Lettere"),E("Half Kneeling Lift","3×10/side","3 sæt","40 sek","Driv fra hofte","Lettere"),E("Single-Leg RDL","3×8/side","3 sæt","30 sek","Balance","Væg")]),B("Puls","main","16 min",[E("Rotational Power","3×8/side","3 sæt","30 sek","Kraft fra gulv","Lettere"),E("Mountain Climbers","3×30 sek","3 sæt","20 sek","Stabil planke","Forhøjet"),E("Jumping Jacks","3×40 sek","3 sæt","20 sek","Rytmisk","Step-out"),E("Band Pull-Apart","2×12","2 sæt","","Skuldersundhed","Let")]),B("Core","main","8 min",[E("Pallof Press","3×10/side","3 sæt","20 sek","Modstå","Lettere"),E("Dead Bug","3×8/side","3 sæt","15 sek","Stabilitet","Kun ben")]),B("Cooldown","cool","4 min",[E("Seated Twist + 90/90","30 sek/side","","","Genopbyg")])]},
+short:{time:"25 min",blocks:[B("Opvarmning","warmup","5 min",[E("Thorax Rotation","6/side","","","Rolig","Mindre")]),B("Hoveddel","main","17 min",[E("Half Kneeling Chop","2×8/side","2 sæt","30 sek","Anti-rotation","Lettere"),E("Mountain Climbers","2×25 sek","2 sæt","20 sek","Stabil","Forhøjet"),E("Jumping Jacks","2×35 sek","2 sæt","15 sek","Rytmisk","Step-out"),E("Pallof Press","2×8/side","2 sæt","15 sek","Modstå","Lettere")]),B("Cooldown","cool","3 min",[E("Seated Twist","20 sek/side","","","Slap af")])]},
+min:{time:"10 min",blocks:[B("Minimum","main","10 min",[E("Thorax Rotation","5/side","","","Åbn","Mindre"),E("Half Kneeling Chop","5/side","","","Kontrol","Let"),E("Jumping Jacks","30 sek","","","Puls","Step-out"),E("Pallof Press","5/side","","","Modstå","Let")])]}},
+];
+// ═══ COGNITION MODULE ═══
+const COG=[
+{id:'sequence',name:'Sekvens-Hukommelse',icon:'🧩',desc:'Husk og gentag en sekvens af felter. Sekvensen vokser.',cat:'hukommelse',time:'3–5 min',difficulty:1},
+{id:'reaction',name:'Reaktionstid',icon:'⚡',desc:'Tryk præcist når farven skifter. Mål din reaktionstid.',cat:'reaktion',time:'2–3 min',difficulty:1},
+{id:'oddone',name:'Find Afvigeren',icon:'🔍',desc:'Find det element der skiller sig ud. Hurtigt og præcist.',cat:'fokus',time:'3 min',difficulty:2},
+{id:'mental-math',name:'Hovedregning',icon:'🔢',desc:'Hurtig addition og subtraktion. Hastighed + præcision.',cat:'beslutning',time:'3 min',difficulty:2},
+{id:'word-recall',name:'Ord-Hukommelse',icon:'📝',desc:'Husk ord der vises kort. Genkald dem bagefter.',cat:'hukommelse',time:'3 min',difficulty:2},
+{id:'stroop',name:'Stroop Fokus',icon:'🎨',desc:'Farven og ordet er i konflikt. Svar på farven, ikke ordet.',cat:'fokus',time:'3 min',difficulty:3},
+{id:'pattern',name:'Mønster-Genkendelse',icon:'🔲',desc:'Find det næste element i mønsteret.',cat:'beslutning',time:'3 min',difficulty:2},
+{id:'dual-count',name:'Dual Tælling',icon:'🔄',desc:'Tæl fremad i hovedet mens du udfører en opgave på skærmen.',cat:'koordinering',time:'4 min',difficulty:3},
+];
+
+const DUAL_TASKS=[
+{name:'Tæl & Squat',desc:'Udfør 10 squats mens du tæller baglæns fra 50 i spring af 3.',how:'Stå op. Squat ned. Tæl: 50, 47, 44... Kontrollér både bevægelse og tal.',time:'3 min'},
+{name:'Balance & Alfabet',desc:'Stå på ét ben. Sig alfabetet baglæns. Skift ben halvvejs.',how:'Stå stabilt. Start med Å, Ø, Æ, Z... Hold fokus på begge opgaver.',time:'2 min'},
+{name:'Finger-Tap & Ordkæde',desc:'Tap skiftevis med fingre på bordet mens du siger ord der starter med sidste bogstav.',how:'Tap: højre-venstre-højre. Sig: Hus → Sol → Lys → Sten...',time:'3 min'},
+{name:'March & Regn',desc:'March på stedet. Læg 7 til 3, derefter 7 til igen. Sig tallene højt.',how:'March: venstre-højre. Sig: 3, 10, 17, 24, 31... Hold rytmen.',time:'3 min'},
+{name:'Tandem Walk & Tæl',desc:'Gå hæl-mod-tå. Tæl ned fra 100 i spring af 7.',how:'Langsom, kontrolleret gang. 100, 93, 86, 79... Præcision over hastighed.',time:'3 min'},
+];
+
+// ═══ COGNITION GAME ENGINES ═══
+let cogState={};
+
+function startCogGame(id){
+  document.getElementById('cogGrid').style.display='none';
+  document.getElementById('cogGameContainer').style.display='block';
+  const area=document.getElementById('cogGameArea');
+  cogState={id,score:0,round:0,startTime:Date.now()};
+  if(id==='sequence')runSequenceGame(area);
+  else if(id==='reaction')runReactionGame(area);
+  else if(id==='oddone')runOddOneGame(area);
+  else if(id==='mental-math')runMathGame(area);
+  else if(id==='word-recall')runWordRecall(area);
+  else if(id==='stroop')runStroopGame(area);
+  else if(id==='pattern')runPatternGame(area);
+  else if(id==='dual-count')runDualCount(area);
+}
+
+function closeCogGame(){
+  document.getElementById('cogGrid').style.display='';
+  document.getElementById('cogGameContainer').style.display='none';
+}
+
+function cogComplete(area,msg,score){
+  const elapsed=Math.round((Date.now()-cogState.startTime)/1000);
+  area.innerHTML=`<div class="game-msg">${msg}</div><div class="game-score">${score}</div><div class="game-sub" style="margin-top:.4rem">${elapsed} sekunder · ${cogState.round} runder</div><div style="margin-top:1rem;display:flex;gap:.5rem;justify-content:center"><button class="btn btn-cog btn-sm" onclick="startCogGame('${cogState.id}')">Igen</button><button class="btn btn-ghost btn-sm" onclick="closeCogGame()">Færdig</button></div>`;
+  // Track
+  const h=JSON.parse(localStorage.getItem('std-cog')||'{"total":0,"last":""}');
+  h.total++;h.last=new Date().toISOString();h[cogState.id]=(h[cogState.id]||0)+1;
+  localStorage.setItem('std-cog',JSON.stringify(h));
+}
+
+// GAME 1: SEQUENCE MEMORY
+function runSequenceGame(area){
+  let seq=[],userSeq=[],showing=false,level=3;
+  function newRound(){
+    cogState.round++;
+    seq=[];for(let i=0;i<level;i++)seq.push(Math.floor(Math.random()*9));
+    userSeq=[];showing=true;
+    render();showSequence();
+  }
+  function render(){
+    area.innerHTML=`<div class="game-msg">Sekvens-Hukommelse</div><div class="game-sub">${showing?'Se sekvensen...':'Gentag sekvensen'} · Niveau ${level-2}</div><div class="game-grid" style="grid-template-columns:repeat(3,1fr);margin:1rem auto;max-width:220px">${Array.from({length:9},(_, i)=>`<div class="game-cell" data-i="${i}" onclick="seqTap(${i})">${i+1}</div>`).join('')}</div><div class="game-sub">Score: ${cogState.score}</div>`;
+  }
+  function showSequence(){
+    let i=0;const iv=setInterval(()=>{
+      const cells=area.querySelectorAll('.game-cell');
+      cells.forEach(c=>c.classList.remove('lit'));
+      if(i<seq.length){cells[seq[i]].classList.add('lit');i++}
+      else{clearInterval(iv);showing=false;render()}
+    },600);
+  }
+  window.seqTap=function(i){
+    if(showing)return;
+    userSeq.push(i);
+    const cells=area.querySelectorAll('.game-cell');
+    if(userSeq[userSeq.length-1]===seq[userSeq.length-1]){
+      cells[i].classList.add('correct');
+      if(userSeq.length===seq.length){cogState.score+=level;level++;setTimeout(newRound,500)}
+    }else{
+      cells[i].classList.add('wrong');
+      setTimeout(()=>cogComplete(area,'Sekvens afsluttet',cogState.score+' point'),800);
+    }
+  };
+  newRound();
+}
+
+// GAME 2: REACTION TIME
+function runReactionGame(area){
+  let times=[],waiting=false,startT=0;
+  function newRound(){
+    if(cogState.round>=5)return finish();
+    cogState.round++;
+    area.innerHTML=`<div class="game-msg">Vent...</div><div class="game-sub">Tryk når boksen bliver grøn</div><div style="width:200px;height:200px;border-radius:var(--radius-lg);background:var(--puls-bg);border:2px solid var(--puls);margin:1rem auto;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.2rem;color:var(--puls)" id="rxBox" onclick="rxTap()">Vent...</div><div class="game-sub">${cogState.round}/5</div>`;
+    const delay=1500+Math.random()*3000;
+    waiting=true;
+    setTimeout(()=>{
+      if(!waiting)return;
+      const box=document.getElementById('rxBox');if(!box)return;
+      box.style.background='var(--green-bg)';box.style.borderColor='var(--green)';box.style.color='var(--green)';box.textContent='NU!';
+      startT=Date.now();waiting=false;
+    },delay);
+  }
+  window.rxTap=function(){
+    if(waiting){area.querySelector('.game-msg').textContent='For tidligt! Vent på grøn.';waiting=false;setTimeout(newRound,1000);return}
+    if(!startT)return;
+    const t=Date.now()-startT;times.push(t);startT=0;
+    area.querySelector('.game-msg').textContent=t+' ms';
+    setTimeout(newRound,800);
+  };
+  function finish(){
+    const avg=Math.round(times.reduce((a,b)=>a+b,0)/times.length);
+    cogComplete(area,'Gennemsnitlig reaktionstid',avg+' ms');
+  }
+  newRound();
+}
+
+// GAME 3: ODD ONE OUT
+function runOddOneGame(area){
+  const colors=['#9B7D50','#5B8F7B','#B07060','#6B7FA0','#8B6B5B'];
+  function newRound(){
+    if(cogState.round>=8)return cogComplete(area,'Fokus-test færdig',cogState.score+'/8 rigtige');
+    cogState.round++;
+    const baseColor=colors[Math.floor(Math.random()*colors.length)];
+    let oddColor;do{oddColor=colors[Math.floor(Math.random()*colors.length)]}while(oddColor===baseColor);
+    const size=9;const oddIdx=Math.floor(Math.random()*size);
+    area.innerHTML=`<div class="game-msg">Find afvigeren</div><div class="game-sub">Runde ${cogState.round}/8 · Score: ${cogState.score}</div><div class="game-grid" style="grid-template-columns:repeat(3,1fr);max-width:220px;margin:1rem auto">${Array.from({length:size},(_,i)=>`<div class="game-cell" style="background:${i===oddIdx?oddColor:baseColor};border-color:${i===oddIdx?oddColor:baseColor}" onclick="oddTap(${i},${oddIdx})">&nbsp;</div>`).join('')}</div>`;
+  }
+  window.oddTap=function(i,correct){
+    const cells=area.querySelectorAll('.game-cell');
+    if(i===correct){cells[i].classList.add('correct');cogState.score++}
+    else{cells[i].classList.add('wrong');cells[correct].classList.add('correct')}
+    setTimeout(newRound,600);
+  };
+  newRound();
+}
+
+// GAME 4: MENTAL MATH
+function runMathGame(area){
+  function newRound(){
+    if(cogState.round>=10)return cogComplete(area,'Hovedregning færdig',cogState.score+'/10');
+    cogState.round++;
+    const a=10+Math.floor(Math.random()*40);const b=5+Math.floor(Math.random()*30);
+    const ops=['+','-'];const op=ops[Math.floor(Math.random()*ops.length)];
+    const correct=op==='+'?a+b:a-b;
+    const opts=[correct,correct+Math.ceil(Math.random()*5),correct-Math.ceil(Math.random()*5),correct+Math.ceil(Math.random()*10)].sort(()=>Math.random()-.5);
+    area.innerHTML=`<div class="game-msg">${a} ${op} ${b} = ?</div><div class="game-sub">Runde ${cogState.round}/10 · Score: ${cogState.score}</div><div style="display:flex;gap:.5rem;margin:1rem auto;justify-content:center;flex-wrap:wrap">${opts.map(o=>`<div class="game-cell" style="width:70px;font-size:1rem" onclick="mathTap(${o},${correct})">${o}</div>`).join('')}</div>`;
+  }
+  window.mathTap=function(v,c){
+    if(v===c)cogState.score++;
+    setTimeout(newRound,300);
+  };
+  newRound();
+}
+
+// GAME 5: WORD RECALL
+function runWordRecall(area){
+  const allWords=['Frihed','Styrke','Balance','Hav','Skov','Ro','Kraft','Rytme','Klarhed','Fokus','Vind','Sti','Bro','Mål','Sol','Is','Ild','Sten','Lys','Tid','Mod','Puls','Jord'];
+  let words=[],phase='show';
+  function newRound(){
+    cogState.round++;
+    const count=3+Math.min(cogState.round,4);
+    words=[];for(let i=0;i<count;i++){let w;do{w=allWords[Math.floor(Math.random()*allWords.length)]}while(words.includes(w));words.push(w)}
+    phase='show';
+    area.innerHTML=`<div class="game-msg">Husk disse ord</div><div class="game-sub">${words.length} ord · Forsvinder om 4 sekunder</div><div style="display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin:1rem 0">${words.map(w=>`<span style="padding:.4rem .8rem;background:var(--cog-bg);border:1px solid var(--cog-border);border-radius:var(--radius);font-weight:500;font-size:1rem">${w}</span>`).join('')}</div>`;
+    setTimeout(()=>{
+      phase='recall';
+      const shuffled=[...words,...allWords.filter(w=>!words.includes(w)).slice(0,words.length)].sort(()=>Math.random()-.5);
+      area.innerHTML=`<div class="game-msg">Vælg de rigtige ord</div><div class="game-sub">Vælg ${words.length} ord</div><div style="display:flex;gap:.4rem;flex-wrap:wrap;justify-content:center;margin:1rem 0" id="wordGrid">${shuffled.map(w=>`<span class="game-cell" style="width:auto;height:auto;padding:.4rem .8rem;font-size:.9rem" onclick="wordTap(this,'${w}')">${w}</span>`).join('')}</div><div class="game-sub" id="wordScore">Valgt: 0/${words.length}</div>`;
+      window._wordPicks=[];
+    },4000);
+  }
+  window.wordTap=function(el,w){
+    if(window._wordPicks.includes(w))return;
+    window._wordPicks.push(w);
+    if(words.includes(w)){el.classList.add('correct');cogState.score++}else{el.classList.add('wrong')}
+    document.getElementById('wordScore').textContent=`Valgt: ${window._wordPicks.length}/${words.length}`;
+    if(window._wordPicks.length>=words.length){
+      if(cogState.round>=4)setTimeout(()=>cogComplete(area,'Ord-hukommelse',cogState.score+' rigtige'),800);
+      else setTimeout(newRound,800);
+    }
+  };
+  newRound();
+}
+
+// GAME 6: STROOP
+function runStroopGame(area){
+  const cols=[{n:'Rød',c:'#B07060'},{n:'Blå',c:'#6B7FA0'},{n:'Grøn',c:'#5B8F7B'},{n:'Gul',c:'#B8944F'}];
+  function newRound(){
+    if(cogState.round>=10)return cogComplete(area,'Stroop Fokus',cogState.score+'/10');
+    cogState.round++;
+    const word=cols[Math.floor(Math.random()*cols.length)];
+    let color;do{color=cols[Math.floor(Math.random()*cols.length)]}while(color.n===word.n);
+    area.innerHTML=`<div class="game-sub">Hvilken FARVE er teksten skrevet i?</div><div class="game-msg" style="font-size:2.5rem;color:${color.c}">${word.n}</div><div class="game-sub">Runde ${cogState.round}/10 · Score: ${cogState.score}</div><div style="display:flex;gap:.4rem;margin:1rem auto;justify-content:center">${cols.map(c=>`<div class="game-cell" style="width:auto;height:auto;padding:.5rem 1rem;background:${c.c};color:#fff;border-color:${c.c};font-size:.8rem" onclick="stroopTap('${c.n}','${color.n}')">${c.n}</div>`).join('')}</div>`;
+  }
+  window.stroopTap=function(picked,correct){
+    if(picked===correct)cogState.score++;
+    setTimeout(newRound,300);
+  };
+  newRound();
+}
+
+// GAME 7: PATTERN
+function runPatternGame(area){
+  function newRound(){
+    if(cogState.round>=8)return cogComplete(area,'Mønster-genkendelse',cogState.score+'/8');
+    cogState.round++;
+    const start=Math.floor(Math.random()*10)+1;const step=Math.floor(Math.random()*5)+2;
+    const seq=[];for(let i=0;i<5;i++)seq.push(start+step*i);
+    const answer=start+step*5;
+    const opts=[answer,answer+step,answer-step,answer+1].sort(()=>Math.random()-.5);
+    area.innerHTML=`<div class="game-msg">${seq.join(', ')}, ?</div><div class="game-sub">Hvad er det næste tal? · Runde ${cogState.round}/8</div><div style="display:flex;gap:.5rem;margin:1rem auto;justify-content:center">${opts.map(o=>`<div class="game-cell" style="width:60px;font-size:1rem" onclick="patTap(${o},${answer})">${o}</div>`).join('')}</div>`;
+  }
+  window.patTap=function(v,c){if(v===c)cogState.score++;setTimeout(newRound,300)};
+  newRound();
+}
+
+// GAME 8: DUAL COUNT
+function runDualCount(area){
+  let count=0,target=0,clicks=0;
+  function newRound(){
+    if(cogState.round>=5)return cogComplete(area,'Dual Tælling',cogState.score+'/5');
+    cogState.round++;
+    target=5+Math.floor(Math.random()*6);count=0;clicks=0;
+    area.innerHTML=`<div class="game-msg">Tæl til ${target}</div><div class="game-sub">Tryk på knappen præcis ${target} gange. Tæl i hovedet.</div><div style="margin:1rem auto"><div class="game-cell" style="width:120px;height:120px;margin:0 auto;font-size:1.5rem;border-radius:50%;border-color:var(--cog);cursor:pointer" onclick="dualTap(${target})">Tryk</div></div><div class="game-sub" id="dualMsg">Tryk ${target} gange</div><button class="btn btn-cog btn-sm mt-1" onclick="dualDone(${target})">Færdig</button>`;
+  }
+  window.dualTap=function(t){clicks++};
+  window.dualDone=function(t){
+    if(clicks===t)cogState.score++;
+    const cells=area.querySelectorAll('.game-cell');
+    cells.forEach(c=>{if(clicks===t)c.classList.add('correct');else c.classList.add('wrong')});
+    document.getElementById('dualMsg').textContent=`Du trykkede ${clicks}× (mål: ${t})`;
+    setTimeout(newRound,1200);
+  };
+  newRound();
+}
+
+// MENTAL RESET: BREATHING
+function startBreathing(){
+  document.getElementById('resetArea').style.display='block';
+  const area=document.getElementById('resetContent');
+  let phase=0,cycles=0;const phases=['Ånd ind...','Hold...','Ånd ud...'];const times=[4000,7000,8000];
+  area.innerHTML=`<div class="game-msg">4-7-8 Vejrtrækning</div><div class="game-sub">4 sek ind · 7 sek hold · 8 sek ud</div><div class="breath-circle" id="breathCircle">${phases[0]}</div><div class="game-sub" id="breathCount">Cyklus 1/4</div>`;
+  function tick(){
+    if(cycles>=4){area.innerHTML=`<div class="game-msg">Færdig</div><div class="game-sub">4 cyklusser gennemført. Mærk roen.</div><button class="btn btn-cog btn-sm mt-1" onclick="document.getElementById('resetArea').style.display='none'">Luk</button>`;return}
+    const c=document.getElementById('breathCircle');if(!c)return;
+    c.textContent=phases[phase];
+    c.className='breath-circle '+(phase===0?'expand':phase===1?'hold':'contract');
+    setTimeout(()=>{phase++;if(phase>2){phase=0;cycles++;const cnt=document.getElementById('breathCount');if(cnt)cnt.textContent=`Cyklus ${Math.min(cycles+1,4)}/4`}tick()},times[phase]);
+  }
+  tick();
+}
+
+// FOCUS RESET
+function startFocusReset(){
+  document.getElementById('resetArea').style.display='block';
+  const area=document.getElementById('resetContent');
+  const steps=['Luk øjnene. Ånd dybt 3 gange.','Mærk fødderne mod gulvet. Vægten i stolen.','Lyt. Hvad kan du høre? Nævn 3 lyde for dig selv.','Åbn øjnene langsomt. Se på én ting i 10 sekunder.','Klar. Tilbage til det der betyder noget.'];
+  let step=0;
+  function show(){
+    if(step>=steps.length){area.innerHTML=`<div class="game-msg">Klar</div><div class="game-sub">Du er til stede. Gå videre.</div><button class="btn btn-cog btn-sm mt-1" onclick="document.getElementById('resetArea').style.display='none'">Luk</button>`;return}
+    area.innerHTML=`<div class="game-msg" style="font-size:1.2rem;max-width:400px">${steps[step]}</div><div class="game-sub">${step+1}/${steps.length}</div><button class="btn btn-cog btn-sm mt-2" onclick="nextFocusStep()">Næste</button>`;
+    step++;
+  }
+  window.nextFocusStep=show;
+  show();
+}
+// ═══ APP LOGIC ═══
+let homeMood='normal';
+function go(page,data){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const t=document.getElementById('page-'+page);if(t)t.classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.dataset.page===page));
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(page==='home')renderHome();
+  if(page==='training')renderGrid();
+  if(page==='detail'&&data)renderDetail(data);
+  if(page==='exercises')renderExL();
+  if(page==='members')renderMem();if(page==='chair')renderChair();if(page==='admin')renderAdmin();
+  if(page==='spinner')initSpin();
+  if(page==='cognition')renderCog();
+  setTimeout(()=>{document.querySelectorAll('.fade-in:not(.visible)').forEach(el=>{new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.08}).observe(el)})},80);
+}
+function closeNav(){document.getElementById('navLinks').classList.remove('open')}
+document.addEventListener('click',e=>{const b=e.target.closest('.filter-btn');if(!b||b.dataset.mood)return;const r=b.closest('.filter-row');if(!r)return;r.querySelectorAll('.filter-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');if(r.id==='moodF'||r.id==='focusF'||r.id==='typeF')renderGrid();if(r.id==='exF')renderExL();if(r.id==='spinF'||r.id==='spinMood')initSpin()});
+function gF(id){const el=document.querySelector('#'+id+' .filter-btn.active');return el?el.dataset.v:'all'}
+function getVidLink(name){const e=EX.find(x=>name.toLowerCase().includes(x.n.toLowerCase().split(' ')[0].toLowerCase()));return e?e.vid:vu(name)}
+
+// HOMEPAGE
+function setHomeMood(m,el){homeMood=m;el.parentElement.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));el.classList.add('active');renderHome()}
+function renderHome(){
+  // Return flow
+  const last=localStorage.getItem('std-last');
+  const banner=document.getElementById('returnBanner');
+  if(last){
+    const days=Math.floor((Date.now()-new Date(last).getTime())/(1000*60*60*24));
+    if(days>=5){
+      banner.innerHTML=`<div class="return-banner"><h4 style="color:var(--cog);margin-bottom:.3rem">Velkommen tilbage</h4><p style="font-size:.86rem;color:var(--text-muted)">${days} dage siden sidst. Start blidt – vi anbefaler en let mobilitet og en kort kognitiv øvelse.</p><div style="margin-top:.6rem;display:flex;gap:.5rem"><button class="btn btn-outline btn-sm" onclick="go('detail',2)">Let mobilitet</button><button class="btn btn-cog btn-sm" onclick="go('cognition')">Kort kognition</button></div></div>`;
+    }else banner.innerHTML='';
+  }else banner.innerHTML='';
+  // Daily recommendation
+  const rec=document.getElementById('homeRec');
+  const pool=T.filter(t=>t.mood.includes(homeMood)||t.mood.includes('normal'));
+  const day=new Date().getDate();
+  const pick=pool[day%pool.length];
+  const cogPick=COG[day%COG.length];
+  const tl=pick.type==='mobilitet'?'tag-mob':pick.type==='styrke'?'tag-str':'tag-puls';
+  const tn=pick.type==='mobilitet'?'Mobilitet':pick.type==='styrke'?'Styrke':'Puls';
+  rec.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem"><span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:600">Dagens anbefaling</span><span style="font-size:.65rem;color:var(--text-dim)">${homeMood==='stiv'?'Stiv dag':homeMood==='overskud'?'Overskudsdag':'Normal dag'}</span></div>
+  <div style="display:flex;gap:1rem;flex-wrap:wrap">
+  <div style="flex:1;min-width:180px;padding:.8rem;background:var(--bg-block);border-radius:var(--radius);cursor:pointer" onclick="go('detail',${pick.id})"><div class="card-tag ${tl}" style="margin-bottom:.2rem">${tn}</div><div style="font-family:var(--font-display);font-size:1.05rem;color:var(--text)">${pick.name}</div><div style="font-size:.78rem;color:var(--text-muted)">${pick.purpose} · ${pick.full.time}</div></div>
+  <div style="flex:1;min-width:180px;padding:.8rem;background:var(--cog-bg);border-radius:var(--radius);cursor:pointer" onclick="go('cognition')"><div class="card-tag tag-cog" style="margin-bottom:.2rem">Kognition</div><div style="font-family:var(--font-display);font-size:1.05rem;color:var(--text)">${cogPick.name}</div><div style="font-size:.78rem;color:var(--text-muted)">${cogPick.desc.slice(0,50)}... · ${cogPick.time}</div></div>
+  </div>`;
+}
+
+// COGNITION PAGE
+function renderCog(){
+  // Daily
+  const day=new Date().getDate();const daily=COG[day%COG.length];
+  document.getElementById('cogDaily').innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem"><span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--cog);font-weight:600">Dagens kognitive øvelse</span><span style="font-size:.65rem;color:var(--text-dim)">${daily.time}</span></div><div style="display:flex;align-items:center;gap:1rem"><div style="font-size:2rem">${daily.icon}</div><div><div style="font-family:var(--font-display);font-size:1.15rem;color:var(--text)">${daily.name}</div><div style="font-size:.84rem;color:var(--text-muted)">${daily.desc}</div></div></div><div style="margin-top:.8rem"><button class="btn btn-cog btn-sm" onclick="startCogGame('${daily.id}')">Start øvelse</button></div>`;
+  // Grid
+  document.getElementById('cogGrid').innerHTML=COG.map(c=>`<div class="cog-card" onclick="startCogGame('${c.id}')"><div class="cog-icon">${c.icon}</div><div class="cog-title">${c.name}</div><div class="cog-desc">${c.desc}</div><div class="cog-time">${c.time} · ${c.cat}</div></div>`).join('');
+  // Dual tasks
+  document.getElementById('dualGrid').innerHTML=DUAL_TASKS.map(d=>`<div class="card" style="cursor:default"><div class="card-title">${d.name}</div><p class="card-text">${d.desc}</p><div style="margin-top:.5rem;padding:.6rem;background:var(--bg-block);border-radius:var(--radius);font-size:.82rem;color:var(--text-muted);line-height:1.6"><strong>Gør det:</strong> ${d.how}</div><div style="font-size:.65rem;color:var(--cog);margin-top:.3rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em">${d.time}</div></div>`).join('');
+  // Track
+  const h=JSON.parse(localStorage.getItem('std-cog')||'{"total":0}');
+  if(h.total>0){
+    const el=document.createElement('div');
+    el.style.cssText='margin-top:1.5rem;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);font-size:.82rem;color:var(--text-muted)';
+    el.innerHTML=`<strong style="color:var(--text)">Din historik:</strong> ${h.total} kognitive sessioner gennemført${h.last?' · Seneste: '+new Date(h.last).toLocaleDateString('da-DK'):''}`;
+    document.getElementById('cogDaily').after(el);
+  }
+}
+
+// TRAINING
+function renderEx(e){return`<div class="ex"><div class="ex-top"><span class="ex-name">${e.n}</span><a href="${getVidLink(e.n)}" target="_blank" rel="noopener" class="ex-video">▶ Video</a></div><div class="ex-detail">${e.d}${e.s?' · '+e.s:''}${e.p?' · Pause: '+e.p:''}</div><div class="ex-cue">↳ ${e.cue}</div><div class="ex-versions"><span>↓ ${e.ez}</span><span>↑ ${e.hd}</span></div></div>`}
+function renderGrid(){
+  const m=gF('moodF'),f=gF('focusF'),ty=gF('typeF');
+  let r=T.filter(t=>{if(m!=='all'&&!t.mood.includes(m))return false;if(f!=='all'&&!t.focus.includes(f))return false;if(ty!=='all'&&t.type!==ty)return false;return true});
+  const g=document.getElementById('trainingGrid');
+  if(!r.length){g.innerHTML='<p class="text-muted" style="grid-column:1/-1;text-align:center;padding:2rem">Ingen match.</p>';return}
+  g.innerHTML=r.map(t=>{
+    const tl=t.type==='mobilitet'?'tag-mob':t.type==='styrke'?'tag-str':'tag-puls';
+    const tn=t.type==='mobilitet'?'Mobilitet':t.type==='styrke'?'Styrke':'Puls';
+    const d=localStorage.getItem('d-'+t.id);
+    return`<div class="card" onclick="go('detail',${t.id})" style="cursor:pointer"><div style="display:flex;justify-content:space-between"><div class="card-tag ${tl}">${tn}</div>${d?'<span style="color:var(--green);font-size:.6rem;font-weight:600">✓</span>':''}</div><div class="card-title" style="margin-top:.15rem">${t.name}</div><p class="card-text" style="font-size:.82rem">${t.purpose}</p><div style="margin-top:.3rem;font-size:.7rem;color:var(--text-dim);font-weight:500">${t.full.time} · ${t.short.time} · ${t.min.time} · ${t.level}</div><div style="margin-top:.2rem;display:flex;gap:.2rem;flex-wrap:wrap">${t.tags.slice(0,3).map(tag=>`<span style="font-size:.55rem;color:var(--text-dim);border:1px solid var(--border);padding:.08rem .3rem;border-radius:3px;font-weight:500">${tag}</span>`).join('')}</div></div>`;
+  }).join('');
+}
+function renderDetail(id){
+  const t=T.find(x=>x.id===id);if(!t)return;
+  const el=document.getElementById('detailContent');
+  const tl=t.type==='mobilitet'?'tag-mob':t.type==='styrke'?'tag-str':'tag-puls';
+  const tn=t.type==='mobilitet'?'Mobilitet':t.type==='styrke'?'Styrke':'Puls';
+  const d=localStorage.getItem('d-'+t.id);
+  el.innerHTML=`<div class="no-print" style="margin-bottom:1rem"><button class="btn btn-ghost btn-sm" onclick="go('training')">← Træninger</button></div>
+    <div style="margin-bottom:1.5rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border)"><div class="card-tag ${tl}">${tn}</div><h2 style="margin-top:.15rem">${t.name}</h2><p class="text-muted" style="font-size:.92rem;margin-top:.3rem">${t.purpose} · <em>${t.p2}</em></p>
+    <div class="detail-meta"><span class="detail-meta-item">📊 ${t.level}</span><span class="detail-meta-item">🎒 ${t.eq}</span><span class="detail-meta-item">📐 ${t.format}</span></div>
+    <div class="detail-tags">${t.tags.map(tag=>`<span>${tag}</span>`).join('')}</div>
+    <div style="margin-top:.6rem;display:flex;gap:.4rem;flex-wrap:wrap" class="no-print"><button class="check-done ${d?'checked':''}" onclick="toggleD(${t.id},this)">${d?'✓ Gennemført':'○ Markér gennemført'}</button><button class="btn btn-ghost btn-sm" onclick="window.print()">🖨</button></div></div>
+    <div class="version-tabs no-print"><div class="version-tab active" onclick="sV(${t.id},'full',this)">Fuld · ${t.full.time}</div><div class="version-tab" onclick="sV(${t.id},'short',this)">Kort · ${t.short.time}</div><div class="version-tab" onclick="sV(${t.id},'min',this)">Min · ${t.min.time}</div></div><div id="vc"></div>`;
+  rV(t,'full');
+}
+function sV(id,v,el){document.querySelectorAll('.version-tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');rV(T.find(x=>x.id===id),v)}
+function rV(t,v){document.getElementById('vc').innerHTML=t[v].blocks.map(b=>{const c=b.type==='warmup'?'block-warmup':b.type==='cool'?'block-cool':'';return`<div class="block ${c}"><h4>${b.title}<span>${b.time}</span></h4>${b.ex.map(e=>renderEx(e)).join('')}</div>`}).join('')}
+function toggleD(id,el){
+  const k='d-'+id;
+  if(localStorage.getItem(k)){localStorage.removeItem(k);el.classList.remove('checked');el.innerHTML='○ Markér gennemført'}
+  else{localStorage.setItem(k,new Date().toISOString());localStorage.setItem('std-last',new Date().toISOString());el.classList.add('checked');el.innerHTML='✓ Gennemført'}
+}
+
+// SPINNER
+let sA=0,sp=false;
+function initSpin(){const w=document.getElementById('spinWheel');const ts=gST();w.innerHTML='';const n=ts.length;for(let i=0;i<n;i++){const a=(360/n)*i;const s=document.createElement('div');s.style.cssText=`position:absolute;top:0;left:0;right:0;bottom:0;clip-path:polygon(50% 50%,${50+48*Math.cos((a-90)*Math.PI/180)}% ${50+48*Math.sin((a-90)*Math.PI/180)}%,${50+48*Math.cos((a+360/n-90)*Math.PI/180)}% ${50+48*Math.sin((a+360/n-90)*Math.PI/180)}%);background:hsl(${35+a*.3},${15+i%2*8}%,${88-i%2*4}%)`;w.appendChild(s)}const c=document.createElement('div');c.className='spinner-center';c.onclick=spin;c.textContent='SPIN';w.appendChild(c);document.getElementById('spinResult').classList.remove('show')}
+function gST(){const ty=gF('spinF');const mood=gF('spinMood');let pool=ty==='all'?[...T]:T.filter(t=>t.type===ty);if(mood==='stiv')pool=pool.filter(t=>t.mood.includes('stiv')||t.mood.includes('reentry'));else if(mood==='overskud')pool=pool.filter(t=>t.mood.includes('overskud')||t.mood.includes('normal'));if(!pool.length)pool=ty==='all'?[...T]:T.filter(t=>t.type===ty);return pool}
+function spin(){if(sp)return;sp=true;const ts=gST(),n=ts.length,sa=360/n,ri=Math.floor(Math.random()*n);sA+=360*5+(360-ri*sa-sa/2);document.getElementById('spinWheel').style.transform=`rotate(${sA}deg)`;document.getElementById('spinResult').classList.remove('show');setTimeout(()=>{const s=ts[ri];document.getElementById('spinName').textContent=s.name;document.getElementById('spinDesc').textContent=s.purpose+' · '+s.full.time+'/'+s.short.time+'/'+s.min.time;document.getElementById('spinGo').onclick=()=>go('detail',s.id);document.getElementById('spinResult').classList.add('show');sp=false},4200)}
+
+// EXERCISES
+function renderExL(){const c=gF('exF');const f=c==='all'?EX:EX.filter(e=>e.cat===c);document.getElementById('exList').innerHTML=f.map(e=>`<div class="exercise-item" onclick="this.classList.toggle('open')"><div class="exercise-header"><h4>${e.n}</h4><a href="${e.vid}" target="_blank" rel="noopener" class="ex-video" onclick="event.stopPropagation()">▶ Video</a></div><div class="exercise-tags"><span>${e.cat}</span><span>${e.eq}</span></div><div class="exercise-detail"><p><strong>Instruktion:</strong> ${e.ins}</p><p style="margin-top:.25rem"><strong>Cues:</strong> <em style="font-family:var(--font-display);font-size:.92rem">${e.cue}</em></p><p style="margin-top:.25rem"><strong>Progression:</strong> ${e.prog}</p><p style="margin-top:.25rem"><strong>Regression:</strong> ${e.reg}</p><div style="margin-top:.4rem"><a href="${e.vid}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.25rem;padding:.3rem .7rem;background:var(--accent);color:#fff;border-radius:var(--radius);font-size:.7rem;text-transform:uppercase;font-weight:600;text-decoration:none">▶ Videoinstruktion</a></div></div></div>`).join('')}
+function renderMem(){
+const g=document.getElementById('memberGrid');
+const cu=JSON.parse(localStorage.getItem('std-user')||'{}');
+function mc(m){const stats=JSON.parse(localStorage.getItem('std-visits-'+m.uid)||'{"count":0}');return`<div class="member-card"><div class="member-avatar">${m.ini}</div><div class="member-info"><h4>${m.name}</h4><p>${cu.uid===m.uid?'<span style="color:var(--green);font-weight:600">● Online</span>':''}</p></div><div class="member-stat"><div class="member-stat-val">${stats.count||0}</div><div class="member-stat-label">Besøg</div></div></div>`}
+g.innerHTML=`<div class="team-label">Coach</div><div style="margin-bottom:.8rem">${mc(MEMBERS.coach)}</div><div class="team-label">Hold 1</div><div class="grid-2" style="margin-bottom:1rem">${MEMBERS.hold1.map(mc).join('')}</div><div class="team-label">Hold 2</div><div class="grid-2">${MEMBERS.hold2.map(mc).join('')}</div>`;
+}
+
+// INIT
+document.addEventListener('DOMContentLoaded',()=>{
+  checkAuth();
+  const q=QUOTES[new Date().getDate()%QUOTES.length];document.getElementById('dailyQuote').textContent=q.t;document.getElementById('dailyQuoteAuthor').textContent='— '+q.a;
+  renderHome();
+  document.querySelectorAll('.fade-in').forEach(el=>{new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.08}).observe(el)});
+});
+
+// ═══ AUTHENTICATION ═══
+const USERS={
+'thomas-f':{pw:'standard2026admin',name:'Thomas F',role:'admin'},
+'jeanet-of':{pw:'jeanet2026',name:'Jeanet ØF',role:'user'},
+'jeanette-b':{pw:'jeanette2026',name:'Jeanette B',role:'user'},
+'iben-s':{pw:'iben2026',name:'Iben S',role:'user'},
+'ole-w':{pw:'ole2026',name:'Ole W',role:'user'},
+'mikkel-b':{pw:'mikkel2026',name:'Mikkel B',role:'user'},
+'christian-b':{pw:'christian2026',name:'Christian B',role:'user'},
+'aksel-a':{pw:'aksel2026',name:'Aksel A',role:'user'},
+'emil-n':{pw:'emil2026',name:'Emil N',role:'user'},
+'simon-a':{pw:'simon2026',name:'Simon A',role:'user'},
+'jesper-a':{pw:'jesper2026',name:'Jesper A',role:'user'},
+'martin-h':{pw:'martin2026',name:'Martin H',role:'user'}
+};
+
+function doLogin(){
+  const uid=document.getElementById('loginUser').value.trim().toLowerCase();
+  const pw=document.getElementById('loginPw').value;
+  const err=document.getElementById('loginError');
+  if(!uid||!pw){err.textContent='Udfyld begge felter';return}
+  const u=USERS[uid];
+  if(!u||u.pw!==pw){err.textContent='Forkert bruger-ID eller adgangskode';return}
+  const session={uid,name:u.name,role:u.role,loginTime:new Date().toISOString()};
+  localStorage.setItem('std-user',JSON.stringify(session));
+  trackVisit(uid);
+  enterApp();
+}
+
+function checkAuth(){
+  const s=JSON.parse(localStorage.getItem('std-user')||'null');
+  if(s&&USERS[s.uid]){
+    trackVisit(s.uid);
+    enterApp();
+  }else{
+    document.getElementById('loginScreen').style.display='flex';
+  }
+}
+
+function enterApp(){
+  document.getElementById('loginScreen').style.display='none';
+  const s=JSON.parse(localStorage.getItem('std-user')||'{}');
+  if(s.role==='admin'){document.getElementById('adminNav').style.display=''}
+  // Show welcome
+  const nameEl=document.querySelector('.hero-tag');
+  if(nameEl&&s.name)nameEl.textContent='Velkommen, '+s.name;
+}
+
+function logout(){
+  localStorage.removeItem('std-user');
+  location.reload();
+}
+
+function trackVisit(uid){
+  const key='std-visits-'+uid;
+  const data=JSON.parse(localStorage.getItem(key)||'{"count":0,"visits":[]}');
+  const today=new Date().toISOString().slice(0,10);
+  const lastVisit=data.visits.length?data.visits[data.visits.length-1].date:'';
+  if(lastVisit!==today){
+    data.count++;
+    data.visits.push({date:today,time:new Date().toISOString()});
+    if(data.visits.length>90)data.visits=data.visits.slice(-90);
+    localStorage.setItem(key,JSON.stringify(data));
+  }
+  // Global log for admin
+  const gkey='std-global-log';
+  const glog=JSON.parse(localStorage.getItem(gkey)||'[]');
+  glog.push({uid,time:new Date().toISOString(),date:today});
+  if(glog.length>500)glog.splice(0,glog.length-500);
+  localStorage.setItem(gkey,JSON.stringify(glog));
+}
+
+// ═══ ADMIN MODULE ═══
+function renderAdmin(){
+  const s=JSON.parse(localStorage.getItem('std-user')||'{}');
+  if(s.role!=='admin'){document.getElementById('adminContent').innerHTML='<p class="text-muted">Kun for administratorer.</p>';return}
+  const glog=JSON.parse(localStorage.getItem('std-global-log')||'[]');
+  const allUsers=Object.keys(USERS);
+  const today=new Date().toISOString().slice(0,10);
+  const last7=[];for(let i=0;i<7;i++){const d=new Date();d.setDate(d.getDate()-i);last7.push(d.toISOString().slice(0,10))}
+  const last30=[];for(let i=0;i<30;i++){const d=new Date();d.setDate(d.getDate()-i);last30.push(d.toISOString().slice(0,10))}
+
+  // Stats per user
+  const userStats=allUsers.map(uid=>{
+    const visits=glog.filter(v=>v.uid===uid);
+    const last7v=visits.filter(v=>last7.includes(v.date));
+    const last30v=visits.filter(v=>last30.includes(v.date));
+    const lastVisit=visits.length?visits[visits.length-1].date:'Aldrig';
+    return{uid,name:USERS[uid].name,total:new Set(visits.map(v=>v.date)).size,last7:new Set(last7v.map(v=>v.date)).size,last30:new Set(last30v.map(v=>v.date)).size,lastVisit};
+  });
+
+  const totalToday=new Set(glog.filter(v=>v.date===today).map(v=>v.uid)).size;
+  const totalWeek=new Set(glog.filter(v=>last7.includes(v.date)).map(v=>v.uid)).size;
+  const totalAll=new Set(glog.map(v=>v.uid)).size;
+
+  document.getElementById('adminContent').innerHTML=`
+  <div style="display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:1.5rem">
+    <div class="admin-stat" style="flex:1;min-width:120px"><div class="admin-stat-val">${totalToday}</div><div class="admin-stat-label">Aktive i dag</div></div>
+    <div class="admin-stat" style="flex:1;min-width:120px"><div class="admin-stat-val">${totalWeek}</div><div class="admin-stat-label">Aktive 7 dage</div></div>
+    <div class="admin-stat" style="flex:1;min-width:120px"><div class="admin-stat-val">${totalAll}</div><div class="admin-stat-label">Unikke brugere</div></div>
+    <div class="admin-stat" style="flex:1;min-width:120px"><div class="admin-stat-val">${glog.length}</div><div class="admin-stat-label">Total besøg</div></div>
+  </div>
+  <h3 class="mb-1">Brugerstatistik</h3>
+  <div style="overflow-x:auto"><table class="admin-table">
+    <thead><tr><th>Navn</th><th>Bruger-ID</th><th>Sidst aktiv</th><th>7 dage</th><th>30 dage</th><th>Total</th></tr></thead>
+    <tbody>${userStats.sort((a,b)=>b.last30-a.last30).map(u=>`<tr><td><strong>${u.name}</strong></td><td style="font-size:.75rem;color:var(--text-dim)">${u.uid}</td><td>${u.lastVisit}</td><td>${u.last7}</td><td>${u.last30}</td><td>${u.total}</td></tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="mt-3 mb-1">Seneste aktivitet</h3>
+  <div style="max-height:300px;overflow-y:auto;border:1px solid var(--border);border-radius:var(--radius-lg)"><table class="admin-table">
+    <thead><tr><th>Tidspunkt</th><th>Bruger</th></tr></thead>
+    <tbody>${glog.slice().reverse().slice(0,50).map(v=>`<tr><td style="font-size:.78rem">${new Date(v.time).toLocaleString('da-DK')}</td><td>${USERS[v.uid]?.name||v.uid}</td></tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="mt-3 mb-1">Loginoplysninger</h3>
+  <p class="text-muted mb-1" style="font-size:.84rem">Alle bruger-ID'er og adgangskoder til uddeling.</p>
+  <div style="overflow-x:auto"><table class="admin-table">
+    <thead><tr><th>Navn</th><th>Bruger-ID</th><th>Adgangskode</th><th>Hold</th></tr></thead>
+    <tbody>${Object.entries(USERS).map(([uid,u])=>{
+      const hold=uid==='thomas-f'?'Coach':MEMBERS.hold1.find(m=>m.uid===uid)?'Hold 1':'Hold 2';
+      return`<tr><td><strong>${u.name}</strong></td><td><code style="background:var(--bg-block);padding:.1rem .4rem;border-radius:3px;font-size:.8rem">${uid}</code></td><td><code style="background:var(--bg-block);padding:.1rem .4rem;border-radius:3px;font-size:.8rem">${u.pw}</code></td><td>${hold}</td></tr>`}).join('')}
+    </tbody>
+  </table></div>
+  <div class="mt-3"><button class="btn btn-ghost btn-sm" onclick="if(confirm('Nulstil al besøgsdata?')){localStorage.removeItem('std-global-log');renderAdmin()}">Nulstil besøgsdata</button> <button class="btn btn-ghost btn-sm" onclick="logout()">Log ud</button></div>`;
+}
+
+// ═══ CHAIR EXERCISES ═══
+const CHAIR_EX=[
+{n:'Siddende March',desc:'Sid oprejst. Løft skiftevis knæene som om du marcher. Hold tempo.',reps:'2 × 30 sek',cue:'Oprejst ryg, sving armene med. Byg gradvist op.',cat:'Opvarmning',vid:'seated marching exercise'},
+{n:'Siddende Hofteåbner',desc:'Sid bredt. Læn forover med flad ryg. Åbn hofterne.',reps:'8 per side, hold 3 sek',cue:'Bryst frem, ånd ud i stræk.',cat:'Mobilitet',vid:'seated hip opener stretch'},
+{n:'Siddende Cat-Cow',desc:'Hænder på knæ. Rund ryggen (cat), svaj (cow). Segment for segment.',reps:'8 reps',cue:'Ånd ind i cow, ud i cat. Mærk hvert led.',cat:'Mobilitet',vid:'seated cat cow spine'},
+{n:'Siddende Thorax Rotation',desc:'Hænder bag hovedet. Roter overkrop til siden. Skift.',reps:'8 per side',cue:'Roter fra brystet, ikke lænden. Albuer bredt.',cat:'Mobilitet',vid:'seated thoracic rotation'},
+{n:'Siddende Arm Circles',desc:'Arme ud til siden. Små cirkler, gradvist større.',reps:'10 frem, 10 tilbage',cue:'Skuldre nede, store kontrollerede cirkler.',cat:'Opvarmning',vid:'seated arm circles'},
+{n:'Siddende Band Pull-Apart',desc:'Elastik foran bryst. Træk fra hinanden. Klem skulderblade.',reps:'3 × 12',cue:'Langsomt, klem 2 sek i yderstilling.',cat:'Styrke',vid:'seated band pull apart'},
+{n:'Siddende Overhead Press',desc:'Håndvægte ved skuldre. Pres lodret op. Kontrolleret ned.',reps:'3 × 10',cue:'Core stram, pres lodret. Ribben nede.',cat:'Styrke',vid:'seated dumbbell press'},
+{n:'Siddende Bicep Curl → Press',desc:'Curl vægtene op til skuldre, pres over hovedet, ned igen.',reps:'3 × 8',cue:'Kontrolleret hele vejen. Ånd ud opad.',cat:'Styrke',vid:'seated curl to press'},
+{n:'Stol-Støttet Squat',desc:'Stå foran stolen. Sæt dig langsomt. Rør lige sædet. Rejs dig.',reps:'3 × 8',cue:'Kontrollér ned (3 sek). Driv fra hæle op. Knæ over tæer.',cat:'Styrke',vid:'chair squat sit to stand'},
+{n:'Siddende Bent-Over Row',desc:'Sid fremme på stolen. Foroverbøjet. Træk vægte mod ribben.',reps:'3 × 10',cue:'Klem skulderblade i top. Neutral ryg.',cat:'Styrke',vid:'seated dumbbell row'},
+{n:'Siddende Pallof Press',desc:'Elastik fra siden. Pres arme ud. Modstå rotation.',reps:'3 × 8 per side',cue:'Sidde oprejst, mave stram, modstå.',cat:'Core',vid:'seated pallof press'},
+{n:'Siddende Dead Bug',desc:'Sid oprejst. Løft ét knæ + modsatte arm. Skift langsomt.',reps:'3 × 6 per side',cue:'Oprejst, core aktiv, langsomt og kontrolleret.',cat:'Core',vid:'seated dead bug'},
+{n:'Siddende Benstræk',desc:'Stræk ét ben lige frem. Hold 2 sek. Sænk langsomt.',reps:'3 × 10 per ben',cue:'Spænd låret helt i top. Kontrollér ned.',cat:'Styrke',vid:'seated leg extension'},
+{n:'Siddende Hæl-/Tårejsning',desc:'Skift mellem at rejse hæle og tæer fra gulvet.',reps:'2 × 15',cue:'Fuld range. Mærk ankler og lægge.',cat:'Mobilitet',vid:'seated heel toe raises'},
+{n:'Siddende Vejrtrækning',desc:'Hænder på maven. 4 sek ind, 7 sek hold, 8 sek ud.',reps:'5 cyklusser',cue:'Slap af i skuldrene. Luk øjnene.',cat:'Cooldown',vid:'seated breathing exercise 478'},
+];
+
+function renderChair(){
+  document.getElementById('chairGrid').innerHTML=CHAIR_EX.map((e,i)=>`
+    <div class="chair-card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div>
+          <div class="chair-num">${String(i+1).padStart(2,'0')}</div>
+          <div class="chair-name">${e.n}</div>
+        </div>
+        <a href="${vu(e.vid)}" target="_blank" rel="noopener" class="ex-video" style="margin-top:.3rem">▶ Video</a>
+      </div>
+      <div class="chair-detail">${e.desc}</div>
+      <div class="chair-cue">↳ ${e.cue}</div>
+      <div class="chair-meta">${e.reps} · ${e.cat}</div>
+    </div>`).join('');
+
+  // Chair program
+  const program=[0,1,2,3,4,5,6,8,9,10,11,14];
+  document.getElementById('chairProgram').innerHTML=program.map((idx,i)=>{
+    const e=CHAIR_EX[idx];
+    const bc=e.cat==='Opvarmning'?'block-warmup':e.cat==='Cooldown'?'block-cool':'';
+    return`<div class="block ${bc}"><h4>${e.n}<span>${e.reps} · ${e.cat}</span></h4><div class="ex"><div class="ex-top"><span class="ex-name">${e.desc}</span><a href="${vu(e.vid)}" target="_blank" rel="noopener" class="ex-video">▶ Video</a></div><div class="ex-cue">↳ ${e.cue}</div></div></div>`;
+  }).join('');
+}
+
+
+</script>
+</body></html>
